@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="open.your.eyes.miichibaseapp.ui.main.MainViewModel" />
+            type="open.hosthomestay.ui.main.MainViewModel" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

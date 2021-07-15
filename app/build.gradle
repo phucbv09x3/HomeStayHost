@@ -12,7 +12,7 @@ android {
     buildToolsVersion versions.toolVersion
 
     defaultConfig {
-        applicationId "open.your.eyes.miichibaseapp"
+        applicationId "open.homestay"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.compileSdk
         versionCode versions.versionCode
@@ -69,7 +69,7 @@ android {
 
             def date = new Date()
             def formattedDate = date.format('yyMMdd_HHmm')
-            def appName = "BaseApp${flavor}${buildType}_v${versionName}(${versionCode})_${formattedDate}.apk"
+            def appName = "HomeStayHost${flavor}${buildType}_v${versionName}(${versionCode})_${formattedDate}.apk"
             outputFileName = appName
         }
     }

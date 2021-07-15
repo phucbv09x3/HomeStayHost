@@ -6,17 +6,17 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="open.your.eyes.miichibaseapp.ui.login.LoginFragment"
+        android:name="open.hosthomestay.ui.login.LoginFragment"
         android:label="Login Screen" />
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="open.your.eyes.miichibaseapp.ui.register.RegisterFragment"
+        android:name="open.hosthomestay.ui.register.RegisterFragment"
         android:label="Register Screen" />
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="open.your.eyes.miichibaseapp.ui.list.ListFragment"
+        android:name="open.hosthomestay.ui.list.ListFragment"
         android:label="List Screen"
         tools:layout="@layout/list_fragment">
 
@@ -27,6 +27,6 @@
 
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="open.your.eyes.miichibaseapp.ui.about.AboutFragment"
+        android:name="open.hosthomestay.ui.about.AboutFragment"
         android:label="Detail Screen" />
 </navigation>
