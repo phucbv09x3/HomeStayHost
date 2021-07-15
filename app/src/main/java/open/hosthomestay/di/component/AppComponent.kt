@@ -11,7 +11,7 @@ import open.hosthomestay.di.module.AppModule
 import javax.inject.Singleton
 
 /**
- * Created by OpenYourEyes on 3/2/2020
+ * Created by Phucbv on 5/2021
  */
 @Singleton
 @Component(modules = [AndroidSupportInjectionModule::class, ActivityBuilder::class, AppModule::class])
