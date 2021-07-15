@@ -120,6 +120,7 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
     //Dagger
+
     implementation "com.google.dagger:dagger-android:$versions.dagger_version"
     implementation "com.google.dagger:dagger-android-support:$versions.dagger_version"
     kapt "com.google.dagger:dagger-compiler:$versions.dagger_version"
@@ -145,4 +146,8 @@ dependencies {
     //Paging
     def paging_version = "3.0.0-beta03"
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,34 +10,90 @@
             type="open.hosthomestay.ui.main.MainViewModel" />
     </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".ui.main.MainActivity">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/main_nav_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_47sdp"
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_graph" />
-    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_on_main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_47sdp"
+            android:background="#fff"
+            android:elevation="@dimen/_14sdp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <Button
+                android:id="@+id/btn_home"
+                android:layout_marginTop="@dimen/_10sdp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableTop="@drawable/ic_baseline_message_24"
+                android:onClick="@{(view)-> viewModel.click(view)}"
+
+                android:text="Tin nhắn"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_6sdp" />
+
+            <Button
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/btn_heart"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableTop="@drawable/ic_baseline_calendar_today_24"
+                android:onClick="@{(view)->viewModel.click(view)}"
+                android:text="Quản lí"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_6sdp" />
+
+            <Button
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/btn_datcho"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableTop="@drawable/ic_baseline_home_24"
+                android:onClick="@{(view)->viewModel.click(view)}"
+                android:text="Thêm mới"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_6sdp" />
+
+            <Button
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/btn_message"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableTop="@drawable/ic_baseline_person_24"
+                android:onClick="@{(view)->viewModel.click(view)}"
+                android:text="Hồ sơ"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_6sdp" />
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

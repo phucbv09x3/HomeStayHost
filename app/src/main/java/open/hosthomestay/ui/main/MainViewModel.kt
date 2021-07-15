@@ -1,5 +1,6 @@
 package open.hosthomestay.ui.main
 
+import android.view.View
 import open.hosthomestay.ui.base.BaseViewModel
 
 /**
@@ -7,4 +8,9 @@ import open.hosthomestay.ui.base.BaseViewModel
  */
 class MainViewModel : BaseViewModel() {
 
+    fun click(view: View) {
+        when (view.id) {
+
+        }
+    }
 }

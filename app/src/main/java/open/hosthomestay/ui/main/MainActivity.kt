@@ -7,14 +7,12 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupActionBarWithNavController
-import kotlinx.android.synthetic.main.activity_main.*
 import open.hosthomestay.R
+
 import open.hosthomestay.databinding.ActivityMainBinding
 import open.hosthomestay.ui.base.BaseActivity
 import open.hosthomestay.ui.base.BaseFragment
 import open.hosthomestay.utils.printLog
-
 
 open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
     NavController.OnDestinationChangedListener {
@@ -44,9 +42,9 @@ open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
 
     override fun initData() {
         navController = navHostFragment.navController
-        setSupportActionBar(toolbar)
+        //setSupportActionBar(toolbar)
         navController.addOnDestinationChangedListener(this)
-        NavigationUI.setupActionBarWithNavController(this, navController)
+//        NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
     override fun navigateUp() {
