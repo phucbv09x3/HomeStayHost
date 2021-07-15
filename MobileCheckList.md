@@ -1,0 +1,15 @@
+- [x] **Check comment tên biến, function**
+- [x] **Đặt tên biến và function phải có ý nghĩa và đúng nghĩa, không đặt tên có 1 ký tự**
+- [x] **Biến và hàm khai báo phải được sử dụng (không sử dụng thì phải bỏ đi tránh dư thừa code)**
+- [x] **Có chỗ nào còn hardcode không?**
+- [x] **Có chỗ nào đang sử dụng trực tiếp giá trị mà sẽ được sử dụng lại không?**
+- [x] **Không xử lý tính toán logic ở bên View, phải xử lý ở tần trung gian (ViewMode, Model...).**
+- [x] **Check null trước khi sử dụng biến**
+- [x] **Khi thao tác với collection, tận dụng tối đa các hàm có sẵn như isEmpty(), first(), last()...**
+- [x] **Không lấy lại các giá trị đã lấy. Thay vào đó khai báo 1 biến rồi sử dụng lại biến này**
+- [x] **Khi gọi hàm thì không được xử lý logic thẳng trong param**
+- [x] **Không truyền quá nhiều param trong 1 function, method**
+- [x] **Không lồng quá nhiều if - else vào nhau. Thay thế sử dụng bằng switch (java/ swift sử dụng switch, kotlin sử dụng when)**
+- [x] **Khi sử dụng try/catch, không nên bỏ qua các ngoại lệ**
+- [x] **Không được bắt ngoại lệ chung khi sử dụng nhiều try/catch**
+- [x] **Đã format lại code sau khi code hoàn thành chưa?**

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MiichiBaseApp</string>
+    <string name="transitionImage">imageNameHere</string>
+</resources>

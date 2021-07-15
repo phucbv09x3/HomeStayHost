@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_btn_speak_now"
+        android:title="Home" />
+    <item
+        android:id="@+id/mid"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_btn_speak_now"
+        android:title="Middle" />
+    <item
+        android:id="@+id/about"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_btn_speak_now"
+        android:title="About" />
+</menu>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "66390740342",
+    "project_id": "opentest-a4c66",
+    "storage_bucket": "opentest-a4c66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66390740342:android:f7d8d8c4962a1123e17e57",
+        "android_client_info": {
+          "package_name": "open.your.eyes.miichibaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "66390740342-73r002nunu8o707nbmojk72c5sjpkp9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC14aLSI0GyetYNkuG_eH0vkUkAus68vWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "66390740342-73r002nunu8o707nbmojk72c5sjpkp9j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
