@@ -24,18 +24,18 @@ class MessageFragment : BaseFragment<MessageViewModel, FragmentMessageBinding>()
 //            if (it != null) {
 //                for (element in it) {
 //                    val hashMap = HashMap<String, Any>()
-//                    hashMap.put("name", element.name)
-//                    hashMap.put("code", element.code)
-//                    hashMap.put("phone_code", element.phone_code)
-//                    databaseReference.child("ProvincesList").push().setValue(hashMap)
+//                    hashMap["name"] = element.name
+//                    hashMap["code"] = element.code
+//                    hashMap["phone_code"] = element.phone_code
+//                    databaseReference.child("ListProvinces").child(element.name).setValue(hashMap)
 //
 //                    val listDistin = element.districts
 //                    for (item in listDistin) {
 //                        val hashMap = HashMap<String, Any>()
-//                        hashMap.put("name", item.name)
-//                        hashMap.put("code", element.code)
-//                        databaseReference.child("ProvincesList").child("districts").push()
-//                            .setValue(hashMap)
+//                        hashMap["name"] = item.name
+//                        hashMap["code"] = element.code
+//                        databaseReference.child("DetailProvince").child(element.name)
+//                            .child("Districts").push().setValue(hashMap)
 //                    }
 //                }
 //            }

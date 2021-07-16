@@ -26,3 +26,9 @@ data class Ward(
     val name: String,
     val short_codename: String
 )
+
+data class ProvinceFB(
+    val code: Int,
+    val name: String,
+    val phone_code: Int
+)

@@ -47,23 +47,34 @@
             <TextView
                 android:id="@+id/tv_detail_gt"
                 android:layout_marginTop="@dimen/_2sdp"
-                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
                 android:text="Vui lòng chia sẻ thông tin vị trí chỗ ngỉ của bạn để dễ tiếp cận khách hàng"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="@id/title_address"
                 android:textColor="@color/colorBlack"
                 app:layout_constraintTop_toBottomOf="@id/title_address"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
             <TextView
+                android:id="@+id/tv_qg"
                 android:text="Quốc Gia"
                 android:textSize="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_16sdp"
                 android:textColor="@color/colorBlack"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_gt"
                 app:layout_constraintLeft_toLeftOf="@id/title_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+            <Spinner
+                android:id="@+id/spinner_province"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_qg"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:elevation="@dimen/_8sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/tv_qg"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_22sdp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

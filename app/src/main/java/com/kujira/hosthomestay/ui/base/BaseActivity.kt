@@ -50,7 +50,7 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mDataBinding = DataBindingUtil.setContentView(this, getContentView());
+        mDataBinding = DataBindingUtil.setContentView(this, getContentView())
         mViewModel = ViewModelProvider(this, factory).get(createViewModel())
         mDataBinding.setVariable(BR.viewModel, mViewModel)
         trackingProgress()
