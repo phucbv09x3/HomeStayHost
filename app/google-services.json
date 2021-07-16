@@ -1,33 +1,63 @@
 {
   "project_info": {
-    "project_number": "66390740342",
-    "project_id": "opentest-a4c66",
-    "storage_bucket": "opentest-a4c66.appspot.com"
+    "project_number": "67625960896",
+    "firebase_url": "https://homestay-f504b-default-rtdb.firebaseio.com",
+    "project_id": "homestay-f504b",
+    "storage_bucket": "homestay-f504b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:66390740342:android:f7d8d8c4962a1123e17e57",
+        "mobilesdk_app_id": "1:67625960896:android:5e080e58e3761f55d0f425",
         "android_client_info": {
-          "package_name": "open.homestay"
+          "package_name": "com.kujira.homestay"
         }
       },
       "oauth_client": [
         {
-          "client_id": "66390740342-73r002nunu8o707nbmojk72c5sjpkp9j.apps.googleusercontent.com",
+          "client_id": "67625960896-6hh94k0oe23ios7trqr9raosiv0m2n3q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC14aLSI0GyetYNkuG_eH0vkUkAus68vWM"
+          "current_key": "AIzaSyCK36dr7ZIYrCaD2u-9LO8EJVHmRts0_48"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "66390740342-73r002nunu8o707nbmojk72c5sjpkp9j.apps.googleusercontent.com",
+              "client_id": "67625960896-6hh94k0oe23ios7trqr9raosiv0m2n3q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67625960896:android:7ac5ae650b7da807d0f425",
+        "android_client_info": {
+          "package_name": "com.kujira.hosthomestay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67625960896-6hh94k0oe23ios7trqr9raosiv0m2n3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK36dr7ZIYrCaD2u-9LO8EJVHmRts0_48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67625960896-6hh94k0oe23ios7trqr9raosiv0m2n3q.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

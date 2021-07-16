@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/messageFragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="open.hosthomestay.ui.login.LoginFragment"
@@ -29,4 +29,20 @@
         android:id="@+id/aboutFragment"
         android:name="open.hosthomestay.ui.about.AboutFragment"
         android:label="Detail Screen" />
+    <fragment
+        android:id="@+id/addRoomFragment"
+        android:name="open.hosthomestay.ui.add.AddRoomFragment"
+         />
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="open.hosthomestay.ui.mess.MessageFragment"
+        />
+    <fragment
+        android:id="@+id/managerRoomFragment"
+        android:name="open.hosthomestay.ui.manager.ManagerRoomFragment"
+        />
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="open.hosthomestay.ui.myacc.MyAccountFragment"
+        />
 </navigation>

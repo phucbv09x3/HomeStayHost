@@ -12,7 +12,7 @@ android {
     buildToolsVersion versions.toolVersion
 
     defaultConfig {
-        applicationId "open.homestay"
+        applicationId "com.kujira.hosthomestay"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.compileSdk
         versionCode versions.versionCode
@@ -100,6 +100,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle_version"
+    implementation 'com.google.firebase:firebase-database:20.0.0'
     kapt 'com.android.databinding:compiler:3.2.0-alpha10'
 
 
