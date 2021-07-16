@@ -1,4 +1,4 @@
-package open.hosthomestay.data.model.response
+package com.kujira.hosthomestay.data.model.response
 
 import com.google.gson.annotations.SerializedName
 

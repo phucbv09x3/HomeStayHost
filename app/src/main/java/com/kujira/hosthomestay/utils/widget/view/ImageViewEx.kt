@@ -1,4 +1,4 @@
-package open.hosthomestay.utils.widget.view
+package com.kujira.hosthomestay.utils.widget.view
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

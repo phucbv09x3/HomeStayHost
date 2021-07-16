@@ -1,4 +1,4 @@
-package open.hosthomestay.ui;
+package com.kujira.hosthomestay.ui;
 
 /**
  * Created by OpenYourEyes on 10/22/2020

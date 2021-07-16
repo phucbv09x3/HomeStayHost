@@ -1,9 +1,9 @@
-package open.hosthomestay.ui.register
+package com.kujira.hosthomestay.ui.register
 
 import kotlinx.android.synthetic.main.register_fragment.*
-import open.hosthomestay.R
-import open.hosthomestay.databinding.RegisterFragmentBinding
-import open.hosthomestay.ui.base.BaseFragment
+import com.kujira.hosthomestay.R
+import com.kujira.hosthomestay.databinding.RegisterFragmentBinding
+import com.kujira.hosthomestay.ui.base.BaseFragment
 
 /**
  * Created by OpenYourEyes on 10/24/2020

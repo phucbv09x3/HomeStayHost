@@ -1,6 +1,6 @@
-package open.hosthomestay.ui.myacc
+package com.kujira.hosthomestay.ui.myacc
 
-import open.hosthomestay.ui.base.BaseViewModel
+import com.kujira.hosthomestay.ui.base.BaseViewModel
 
 class MyAccountViewModel : BaseViewModel() {
 }

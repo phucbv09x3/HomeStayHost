@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="open.hosthomestay.ui.register.RegisterViewModel" />
+            type="com.kujira.hosthomestay.ui.register.RegisterViewModel" />
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"

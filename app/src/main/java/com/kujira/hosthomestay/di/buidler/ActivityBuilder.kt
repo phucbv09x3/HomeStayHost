@@ -1,8 +1,8 @@
-package open.hosthomestay.di.buidler
+package com.kujira.hosthomestay.di.buidler
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import open.hosthomestay.ui.main.MainActivity
+import com.kujira.hosthomestay.ui.main.MainActivity
 
 @Module
 abstract class ActivityBuilder {

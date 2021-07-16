@@ -1,19 +1,19 @@
-package open.hosthomestay.di.module
+package com.kujira.hosthomestay.di.module
 
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import dagger.Module
 import dagger.Provides
-import open.hosthomestay.data.AppDataManager
-import open.hosthomestay.data.DataManager
-import open.hosthomestay.data.api.ApiService
-import open.hosthomestay.data.api.IApiService
-import open.hosthomestay.data.local.DataStoreHelper
-import open.hosthomestay.data.local.DataStoreManager
-import open.hosthomestay.data.scheduler.AppSchedulerProvider
-import open.hosthomestay.data.scheduler.ISchedulerProvider
-import open.hosthomestay.ui.base.ViewModelFactory
+import com.kujira.hosthomestay.data.AppDataManager
+import com.kujira.hosthomestay.data.DataManager
+import com.kujira.hosthomestay.data.api.ApiService
+import com.kujira.hosthomestay.data.api.IApiService
+import com.kujira.hosthomestay.data.local.DataStoreHelper
+import com.kujira.hosthomestay.data.local.DataStoreManager
+import com.kujira.hosthomestay.data.scheduler.AppSchedulerProvider
+import com.kujira.hosthomestay.data.scheduler.ISchedulerProvider
+import com.kujira.hosthomestay.ui.base.ViewModelFactory
 import javax.inject.Singleton
 
 @Module

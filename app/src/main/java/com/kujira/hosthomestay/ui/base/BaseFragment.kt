@@ -1,4 +1,4 @@
-package open.hosthomestay.ui.base
+package com.kujira.hosthomestay.ui.base
 
 import android.app.Activity
 import android.app.Dialog
@@ -14,13 +14,13 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.FragmentNavigator
 import dagger.android.support.DaggerFragment
-import open.hosthomestay.data.scheduler.ISchedulerProvider
+import com.kujira.hosthomestay.data.scheduler.ISchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-import open.hosthomestay.BR
-import open.hosthomestay.R
-import open.hosthomestay.data.DataManager
-import open.hosthomestay.utils.printLog
+import com.kujira.hosthomestay.BR
+import com.kujira.hosthomestay.R
+import com.kujira.hosthomestay.data.DataManager
+import com.kujira.hosthomestay.utils.printLog
 import javax.inject.Inject
 
 

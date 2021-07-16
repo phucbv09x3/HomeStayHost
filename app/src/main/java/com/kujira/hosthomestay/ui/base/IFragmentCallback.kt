@@ -1,4 +1,4 @@
-package open.hosthomestay.ui.base
+package com.kujira.hosthomestay.ui.base
 
 import android.content.Context
 

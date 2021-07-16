@@ -1,4 +1,4 @@
-package open.hosthomestay.utils.widget.view
+package com.kujira.hosthomestay.utils.widget.view
 
 import android.view.View
 import io.reactivex.Observable

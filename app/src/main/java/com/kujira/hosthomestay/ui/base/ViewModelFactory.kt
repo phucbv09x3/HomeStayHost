@@ -1,20 +1,20 @@
-package open.hosthomestay.ui.base
+package com.kujira.hosthomestay.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import open.hosthomestay.data.DataManager
-import open.hosthomestay.data.api.ApiService
-import open.hosthomestay.data.api.IApiService
-import open.hosthomestay.data.scheduler.ISchedulerProvider
-import open.hosthomestay.ui.about.AboutViewModel
-import open.hosthomestay.ui.add.AddRoomViewModel
-import open.hosthomestay.ui.list.ListViewModel
-import open.hosthomestay.ui.login.LoginViewModel
-import open.hosthomestay.ui.main.MainViewModel
-import open.hosthomestay.ui.manager.ManagerRoomViewModel
-import open.hosthomestay.ui.mess.MessageViewModel
-import open.hosthomestay.ui.myacc.MyAccountViewModel
-import open.hosthomestay.ui.register.RegisterViewModel
+import com.kujira.hosthomestay.data.DataManager
+import com.kujira.hosthomestay.data.api.ApiService
+import com.kujira.hosthomestay.data.api.IApiService
+import com.kujira.hosthomestay.data.scheduler.ISchedulerProvider
+import com.kujira.hosthomestay.ui.about.AboutViewModel
+import com.kujira.hosthomestay.ui.add.AddRoomViewModel
+import com.kujira.hosthomestay.ui.list.ListViewModel
+import com.kujira.hosthomestay.ui.login.LoginViewModel
+import com.kujira.hosthomestay.ui.main.MainViewModel
+import com.kujira.hosthomestay.ui.manager.ManagerRoomViewModel
+import com.kujira.hosthomestay.ui.mess.MessageViewModel
+import com.kujira.hosthomestay.ui.myacc.MyAccountViewModel
+import com.kujira.hosthomestay.ui.register.RegisterViewModel
 import javax.inject.Inject
 import javax.inject.Singleton
 

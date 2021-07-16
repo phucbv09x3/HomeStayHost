@@ -1,4 +1,4 @@
-package open.hosthomestay.utils
+package com.kujira.hosthomestay.utils
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
-import open.hosthomestay.data.model.response.ErrorResponse
+import com.kujira.hosthomestay.data.model.response.ErrorResponse
 
 /**
  * Created by OpenYourEyes on 4/4/21

@@ -1,12 +1,13 @@
-package open.hosthomestay
+package com.kujira.hosthomestay
 
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.interceptors.HttpLoggingInterceptor
+import com.google.firebase.FirebaseApp
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import okhttp3.OkHttpClient
-import open.hosthomestay.di.component.DaggerAppComponent
-import open.hosthomestay.utils.Constants
+import com.kujira.hosthomestay.di.component.DaggerAppComponent
+import com.kujira.hosthomestay.utils.Constants
 import java.util.concurrent.TimeUnit
 
 /**
@@ -20,6 +21,7 @@ class App : DaggerApplication() {
     override fun onCreate() {
         super.onCreate()
         initNetworking()
+        //FirebaseApp.initializeApp(this)
     }
 
     private fun initNetworking() {

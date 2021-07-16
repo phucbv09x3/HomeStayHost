@@ -1,8 +1,8 @@
-package open.hosthomestay.ui.login
+package com.kujira.hosthomestay.ui.login
 
-import open.hosthomestay.R
-import open.hosthomestay.databinding.LoginFragmentBinding
-import open.hosthomestay.ui.base.BaseFragment
+import com.kujira.hosthomestay.R
+import com.kujira.hosthomestay.databinding.LoginFragmentBinding
+import com.kujira.hosthomestay.ui.base.BaseFragment
 
 /**
  * Created by OpenYourEyes on 10/24/2020

@@ -1,6 +1,6 @@
-package open.hosthomestay.data
+package com.kujira.hosthomestay.data
 
-import open.hosthomestay.data.local.DataStoreHelper
+import com.kujira.hosthomestay.data.local.DataStoreHelper
 import javax.inject.Inject
 import javax.inject.Singleton
 

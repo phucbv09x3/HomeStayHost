@@ -1,12 +1,12 @@
-package open.hosthomestay.ui.about
+package com.kujira.hosthomestay.ui.about
 
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.about_fragment.*
-import open.hosthomestay.R
-import open.hosthomestay.data.model.RepoModel
-import open.hosthomestay.databinding.AboutFragmentBinding
-import open.hosthomestay.ui.base.BaseFragment
+import com.kujira.hosthomestay.R
+import com.kujira.hosthomestay.data.model.RepoModel
+import com.kujira.hosthomestay.databinding.AboutFragmentBinding
+import com.kujira.hosthomestay.ui.base.BaseFragment
 
 
 class AboutFragment : BaseFragment<AboutViewModel, AboutFragmentBinding>() {

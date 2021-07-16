@@ -1,4 +1,4 @@
-package open.hosthomestay.data.api
+package com.kujira.hosthomestay.data.api
 
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
@@ -6,8 +6,8 @@ import com.google.gson.JsonSyntaxException
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import open.hosthomestay.BuildConfig
-import open.hosthomestay.utils.printLog
+import com.kujira.hosthomestay.BuildConfig
+import com.kujira.hosthomestay.utils.printLog
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -25,7 +25,7 @@ class ApiService : IApiService {
 
     private lateinit var retrofitCoroutines: Retrofit
     private val retrofitWithoutAuthenticator: Retrofit by lazy {
-        val baseUrl = BuildConfig.API_HOST
+        val baseUrl = "https://provinces.open-api.vn"
         Retrofit.Builder()
             .baseUrl(baseUrl)
             .client(createHttpClient())
@@ -82,7 +82,7 @@ class ApiService : IApiService {
      */
     override fun createApiCoroutines(token: String) {
         retrofitCoroutines = Retrofit.Builder()
-            .baseUrl(BuildConfig.API_HOST)
+            .baseUrl("https://provinces.open-api.vn/")
             .client(createHttpClient(token))
             .addConverterFactory(GsonConverterFactory.create())
             .build()

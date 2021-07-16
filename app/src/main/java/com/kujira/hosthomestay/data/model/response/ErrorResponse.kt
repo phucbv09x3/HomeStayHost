@@ -1,4 +1,4 @@
-package open.hosthomestay.data.model.response
+package com.kujira.hosthomestay.data.model.response
 
 class ErrorResponse : Throwable {
     var errorMessage: String? = null

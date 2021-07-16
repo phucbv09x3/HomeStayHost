@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="open.hosthomestay.ui.main.MainViewModel" />
+            type="com.kujira.hosthomestay.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

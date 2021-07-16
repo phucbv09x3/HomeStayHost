@@ -1,6 +1,6 @@
-package open.hosthomestay.ui.about
+package com.kujira.hosthomestay.ui.about
 
-import open.hosthomestay.ui.base.BaseViewModel
+import com.kujira.hosthomestay.ui.base.BaseViewModel
 
 class AboutViewModel : BaseViewModel() {
 

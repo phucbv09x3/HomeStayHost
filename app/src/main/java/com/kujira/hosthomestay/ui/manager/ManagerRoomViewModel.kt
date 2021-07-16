@@ -1,6 +1,6 @@
-package open.hosthomestay.ui.manager
+package com.kujira.hosthomestay.ui.manager
 
-import open.hosthomestay.ui.base.BaseViewModel
+import com.kujira.hosthomestay.ui.base.BaseViewModel
 
 class ManagerRoomViewModel : BaseViewModel() {
 }

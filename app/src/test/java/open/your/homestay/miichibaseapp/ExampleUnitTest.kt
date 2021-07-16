@@ -1,4 +1,4 @@
-package open.hosthomestay
+package com.kujira.hosthomestay
 
 import org.junit.Test
 

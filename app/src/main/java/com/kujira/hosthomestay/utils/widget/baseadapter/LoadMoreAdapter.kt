@@ -1,4 +1,4 @@
-package open.hosthomestay.utils.widget.baseadapter
+package com.kujira.hosthomestay.utils.widget.baseadapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,9 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.RecyclerView
-import open.hosthomestay.R
-import open.hosthomestay.data.model.RepoModel
-import open.hosthomestay.utils.printLog
+import com.kujira.hosthomestay.R
+import com.kujira.hosthomestay.data.model.RepoModel
+import com.kujira.hosthomestay.utils.printLog
 
 /**
  * Created by OpenYourEyes on 11/19/20

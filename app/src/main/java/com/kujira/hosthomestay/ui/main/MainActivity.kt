@@ -1,4 +1,4 @@
-package open.hosthomestay.ui.main
+package com.kujira.hosthomestay.ui.main
 
 import android.os.Bundle
 import androidx.navigation.NavController
@@ -7,12 +7,14 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import open.hosthomestay.R
+import com.google.firebase.FirebaseApp
+import com.kujira.hosthomestay.R
 
-import open.hosthomestay.databinding.ActivityMainBinding
-import open.hosthomestay.ui.base.BaseActivity
-import open.hosthomestay.ui.base.BaseFragment
-import open.hosthomestay.utils.printLog
+import com.kujira.hosthomestay.databinding.ActivityMainBinding
+import com.kujira.hosthomestay.ui.base.BaseActivity
+import com.kujira.hosthomestay.ui.base.BaseFragment
+import com.kujira.hosthomestay.utils.printLog
+import java.security.AccessController.getContext
 
 open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
     NavController.OnDestinationChangedListener {
@@ -40,11 +42,36 @@ open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
     override fun initAction() {
     }
 
+
     override fun initData() {
         navController = navHostFragment.navController
         //setSupportActionBar(toolbar)
         navController.addOnDestinationChangedListener(this)
 //        NavigationUI.setupActionBarWithNavController(this, navController)
+
+
+        listenerAction()
+
+    }
+
+    private fun listenerAction(){
+        mViewModel.onClickMain.observe(this, {
+            when (it) {
+                MainViewModel.BTN_MESSAGE -> {
+                    navigate(R.id.messageFragment)
+                }
+                MainViewModel.BTN_MANAGER_ROOM -> {
+                    navigate(R.id.managerRoomFragment)
+                }
+                MainViewModel.BTN_ADD_ROOM -> {
+                    navigate(R.id.addRoomFragment)
+                }
+                MainViewModel.BTN_MY_ACC -> {
+                    navigate(R.id.myAccountFragment)
+                }
+
+            }
+        })
     }
 
     override fun navigateUp() {

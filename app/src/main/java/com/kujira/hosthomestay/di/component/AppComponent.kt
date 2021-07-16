@@ -1,13 +1,13 @@
-package open.hosthomestay.di.component
+package com.kujira.hosthomestay.di.component
 
 import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
-import open.hosthomestay.App
-import open.hosthomestay.di.buidler.ActivityBuilder
-import open.hosthomestay.di.module.AppModule
+import com.kujira.hosthomestay.App
+import com.kujira.hosthomestay.di.buidler.ActivityBuilder
+import com.kujira.hosthomestay.di.module.AppModule
 import javax.inject.Singleton
 
 /**

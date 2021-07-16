@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="open.hosthomestay.ui.manager.ManagerRoomViewModel" />
+            type="com.kujira.hosthomestay.ui.manager.ManagerRoomViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

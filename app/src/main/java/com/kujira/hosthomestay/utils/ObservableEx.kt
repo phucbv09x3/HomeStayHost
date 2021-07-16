@@ -1,9 +1,9 @@
-package open.hosthomestay.utils
+package com.kujira.hosthomestay.utils
 
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
-import open.hosthomestay.data.model.response.BaseResponse
-import open.hosthomestay.data.model.response.ErrorResponse
+import com.kujira.hosthomestay.data.model.response.BaseResponse
+import com.kujira.hosthomestay.data.model.response.ErrorResponse
 
 /**
  * Created by OpenYourEyes on 10/24/2020

@@ -1,4 +1,4 @@
-package open.hosthomestay.utils.widget.baseadapter
+package com.kujira.hosthomestay.utils.widget.baseadapter
 
 import io.reactivex.subjects.BehaviorSubject
 

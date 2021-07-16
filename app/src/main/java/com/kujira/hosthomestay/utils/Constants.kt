@@ -1,4 +1,4 @@
-package open.hosthomestay.utils
+package com.kujira.hosthomestay.utils
 
 import android.content.Context
 import androidx.datastore.core.DataStore

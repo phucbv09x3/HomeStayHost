@@ -1,6 +1,6 @@
-package open.hosthomestay.utils
+package com.kujira.hosthomestay.utils
 
-import open.hosthomestay.data.scheduler.ISchedulerProvider
+import com.kujira.hosthomestay.data.scheduler.ISchedulerProvider
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.functions.Consumer

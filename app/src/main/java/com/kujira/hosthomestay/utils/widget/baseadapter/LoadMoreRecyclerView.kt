@@ -1,11 +1,11 @@
-package open.hosthomestay.utils.widget.baseadapter
+package com.kujira.hosthomestay.utils.widget.baseadapter
 
 import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import open.hosthomestay.utils.printLog
+import com.kujira.hosthomestay.utils.printLog
 
 fun ConcatAdapter.checkLoading(pagingDelegate: PagingDelegate) {
     printLog("checkLoading ${adapters.size}")

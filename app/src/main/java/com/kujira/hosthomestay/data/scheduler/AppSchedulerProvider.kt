@@ -1,4 +1,4 @@
-package open.hosthomestay.data.scheduler
+package com.kujira.hosthomestay.data.scheduler
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers

@@ -1,4 +1,4 @@
-package open.hosthomestay.ui.list
+package com.kujira.hosthomestay.ui.list
 
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -6,12 +6,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import kotlinx.android.synthetic.main.list_fragment.*
-import open.hosthomestay.R
-import open.hosthomestay.data.model.RepoModel
-import open.hosthomestay.databinding.ListFragmentBinding
-import open.hosthomestay.ui.base.BaseFragment
-import open.hosthomestay.utils.printLog
-import open.hosthomestay.utils.widget.baseadapter.*
+import com.kujira.hosthomestay.R
+import com.kujira.hosthomestay.data.model.RepoModel
+import com.kujira.hosthomestay.databinding.ListFragmentBinding
+import com.kujira.hosthomestay.ui.base.BaseFragment
+import com.kujira.hosthomestay.utils.printLog
+import com.kujira.hosthomestay.utils.widget.baseadapter.*
 
 /**
  * Created by OpenYourEyes on 11/2/20

@@ -1,13 +1,13 @@
-package open.hosthomestay.ui.login
+package com.kujira.hosthomestay.ui.login
 
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import open.hosthomestay.R
-import open.hosthomestay.data.api.ApiCoroutines
-import open.hosthomestay.ui.base.BaseViewModel
-import open.hosthomestay.utils.printLog
+import com.kujira.hosthomestay.R
+import com.kujira.hosthomestay.data.api.ApiCoroutines
+import com.kujira.hosthomestay.ui.base.BaseViewModel
+import com.kujira.hosthomestay.utils.printLog
 import kotlin.math.log
 
 /**
@@ -32,10 +32,10 @@ class LoginViewModel : BaseViewModel() {
             val bundle = bundleOf("DKS" to "OpenYourEyes")
             navigation.navigate(R.id.listFragment, bundle = bundle, addToBackStack = false)
         }
-        login()
+        //login()
     }
 
-    fun login() {
-        apiService.createApiCoroutines("Hello")
-    }
+//    fun login() {
+//        apiService.createApiCoroutines("Hello")
+//    }
 }

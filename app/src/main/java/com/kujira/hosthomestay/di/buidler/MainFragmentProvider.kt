@@ -1,15 +1,15 @@
-package open.hosthomestay.di.buidler
+package com.kujira.hosthomestay.di.buidler
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import open.hosthomestay.ui.about.AboutFragment
-import open.hosthomestay.ui.add.AddRoomFragment
-import open.hosthomestay.ui.list.ListFragment
-import open.hosthomestay.ui.login.LoginFragment
-import open.hosthomestay.ui.manager.ManagerRoomFragment
-import open.hosthomestay.ui.mess.MessageFragment
-import open.hosthomestay.ui.myacc.MyAccountFragment
-import open.hosthomestay.ui.register.RegisterFragment
+import com.kujira.hosthomestay.ui.about.AboutFragment
+import com.kujira.hosthomestay.ui.add.AddRoomFragment
+import com.kujira.hosthomestay.ui.list.ListFragment
+import com.kujira.hosthomestay.ui.login.LoginFragment
+import com.kujira.hosthomestay.ui.manager.ManagerRoomFragment
+import com.kujira.hosthomestay.ui.mess.MessageFragment
+import com.kujira.hosthomestay.ui.myacc.MyAccountFragment
+import com.kujira.hosthomestay.ui.register.RegisterFragment
 
 @Module
 abstract class MainFragmentProvider {

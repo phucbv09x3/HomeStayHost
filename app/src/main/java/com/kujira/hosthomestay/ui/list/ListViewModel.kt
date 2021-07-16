@@ -1,4 +1,4 @@
-package open.hosthomestay.ui.list
+package com.kujira.hosthomestay.ui.list
 
 import android.os.Handler
 import androidx.lifecycle.viewModelScope
@@ -7,12 +7,12 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import open.hosthomestay.data.model.GitResponse
-import open.hosthomestay.data.model.RepoModel
-import open.hosthomestay.ui.base.BaseViewModel
-import open.hosthomestay.utils.*
-import open.hosthomestay.utils.widget.baseadapter.PagingDelegate
-import open.hosthomestay.utils.widget.baseadapter.PagingType
+import com.kujira.hosthomestay.data.model.GitResponse
+import com.kujira.hosthomestay.data.model.RepoModel
+import com.kujira.hosthomestay.ui.base.BaseViewModel
+import com.kujira.hosthomestay.utils.*
+import com.kujira.hosthomestay.utils.widget.baseadapter.PagingDelegate
+import com.kujira.hosthomestay.utils.widget.baseadapter.PagingType
 import java.sql.Time
 import java.util.concurrent.TimeUnit
 
@@ -28,7 +28,7 @@ class ListViewModel : BaseViewModel(), PagingDelegate {
         triggerPaging.filter {
             it != PagingType.None
         }.subscribe {
-            getListRepo()
+            //getListRepo()
         }.addDisposable()
     }
 
@@ -42,26 +42,26 @@ class ListViewModel : BaseViewModel(), PagingDelegate {
         return _listRepo.hasValue()
     }
 
-    private fun getListRepo() {
-        val isRefresh = triggerPaging.value == PagingType.Refresh
-        printLog("getListRepo ${triggerPaging.value}")
-        job = viewModelScope.launch {
-            executeRequestTest(request = { getRepoGit() }, isLoading = isRefresh)
-                .onEach { delay(1000) }
-                .map { it.items }
-                .collect { newItems ->
-                    page++
-                    if (isRefresh) {
-                        _listRepo.postValue(newItems)
-                    } else {
-                        val listItems = _listRepo.value ?: mutableListOf()
-                        listItems.addAll(newItems)
-                        _listRepo.postValue(listItems)
-                    }
-                }
-
-        }
-    }
+//    private fun getListRepo() {
+//        val isRefresh = triggerPaging.value == PagingType.Refresh
+//        printLog("getListRepo ${triggerPaging.value}")
+//        job = viewModelScope.launch {
+//            executeRequestTest(request = { getRepoGit() }, isLoading = isRefresh)
+//                .onEach { delay(1000) }
+//                .map { it.items }
+//                .collect { newItems ->
+//                    page++
+//                    if (isRefresh) {
+//                        _listRepo.postValue(newItems)
+//                    } else {
+//                        val listItems = _listRepo.value ?: mutableListOf()
+//                        listItems.addAll(newItems)
+//                        _listRepo.postValue(listItems)
+//                    }
+//                }
+//
+//        }
+//    }
 
     fun onRefresh() {
         page = 0

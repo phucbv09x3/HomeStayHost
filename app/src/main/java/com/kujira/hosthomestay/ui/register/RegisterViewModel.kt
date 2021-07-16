@@ -1,6 +1,6 @@
-package open.hosthomestay.ui.register
+package com.kujira.hosthomestay.ui.register
 
-import open.hosthomestay.ui.base.BaseViewModel
+import com.kujira.hosthomestay.ui.base.BaseViewModel
 
 /**
  * Created by OpenYourEyes on 10/24/2020

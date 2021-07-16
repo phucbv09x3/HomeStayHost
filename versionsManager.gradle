@@ -18,7 +18,7 @@ ext.versions =
                 // networking
                 networking_version: '1.0.2',
                 // dagger
-                dagger_version    : '2.24',
+                dagger_version    : '2.35.1',
                 //google service
                 google_service_version: '4.3.4',
                 //data store

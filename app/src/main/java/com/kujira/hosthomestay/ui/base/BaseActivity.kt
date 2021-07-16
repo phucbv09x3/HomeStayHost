@@ -1,4 +1,4 @@
-package open.hosthomestay.ui.base
+package com.kujira.hosthomestay.ui.base
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +7,12 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import dagger.android.support.DaggerAppCompatActivity
-import open.hosthomestay.BR
+import com.kujira.hosthomestay.BR
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-import open.hosthomestay.data.DataManager
-import open.hosthomestay.data.scheduler.ISchedulerProvider
-import open.hosthomestay.utils.printLog
+import com.kujira.hosthomestay.data.DataManager
+import com.kujira.hosthomestay.data.scheduler.ISchedulerProvider
+import com.kujira.hosthomestay.utils.printLog
 import javax.inject.Inject
 
 /**

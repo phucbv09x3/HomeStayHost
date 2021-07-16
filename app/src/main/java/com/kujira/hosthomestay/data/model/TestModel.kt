@@ -1,4 +1,4 @@
-package open.hosthomestay.data.model
+package com.kujira.hosthomestay.data.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

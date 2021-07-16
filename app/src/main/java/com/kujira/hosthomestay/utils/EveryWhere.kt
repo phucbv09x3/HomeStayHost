@@ -1,7 +1,7 @@
-package open.hosthomestay.utils
+package com.kujira.hosthomestay.utils
 
 import android.util.Log
-import open.hosthomestay.BuildConfig
+import com.kujira.hosthomestay.BuildConfig
 
 /**
  * Created by OpenYourEyes on 10/22/2020

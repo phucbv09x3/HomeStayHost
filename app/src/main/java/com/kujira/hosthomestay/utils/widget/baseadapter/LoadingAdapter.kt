@@ -1,12 +1,12 @@
-package open.hosthomestay.utils.widget.baseadapter
+package com.kujira.hosthomestay.utils.widget.baseadapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import open.hosthomestay.R
-import open.hosthomestay.utils.printLog
+import com.kujira.hosthomestay.R
+import com.kujira.hosthomestay.utils.printLog
 
 /**
  * Created by OpenYourEyes on 4/6/21

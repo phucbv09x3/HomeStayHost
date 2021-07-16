@@ -8,7 +8,7 @@
 
         <variable
             name="model"
-            type="open.hosthomestay.data.model.RepoModel" />
+            type="com.kujira.hosthomestay.data.model.RepoModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

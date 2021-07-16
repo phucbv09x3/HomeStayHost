@@ -1,8 +1,8 @@
-package open.hosthomestay.di.buidler
+package com.kujira.hosthomestay.di.buidler
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import open.hosthomestay.ui.login.LoginFragment
+import com.kujira.hosthomestay.ui.login.LoginFragment
 
 @Module
 abstract class AuthFragmentProvider {

@@ -1,4 +1,4 @@
-package open.hosthomestay.data.api
+package com.kujira.hosthomestay.data.api
 
 interface IApiService {
     fun apiWithoutAuthenticator(): ApiCoroutines
