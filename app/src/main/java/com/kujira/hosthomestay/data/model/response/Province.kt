@@ -32,3 +32,20 @@ data class ProvinceFB(
     val name: String,
     val phone_code: Int
 )
+
+data class DistrictFB(
+    val code: String,
+    val name: String
+)
+
+data class AddRoomModel(
+    var address: String,
+    var typeRoom: String,
+    var nameRoom: String,
+    var s_room: String,
+    var numberSleepRoom: String,
+    var convenient : String,
+    var gt_all : String,
+    var imageRoom1: String,
+    var imageRoom2: String,
+)
