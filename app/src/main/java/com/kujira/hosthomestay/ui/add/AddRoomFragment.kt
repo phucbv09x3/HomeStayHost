@@ -13,8 +13,8 @@ import kotlinx.android.synthetic.main.fragment_add_room.*
 
 
 class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>() {
-    private var listProvinces = arrayListOf<String>("Tinh")
-    private var listDistrict = arrayListOf<String>("Quan Huyen")
+    private var listProvinces = arrayListOf<String>()
+    private var listDistrict = arrayListOf<String>()
     private var nameProvince = ""
     private var nameDistricts = ""
     private var listProvincesFB = mutableListOf<ProvinceFB>()
@@ -27,6 +27,12 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
     @RequiresApi(Build.VERSION_CODES.O)
     override fun initView() {
 
+        val arrayAdapterProvinces = ArrayAdapter(
+            activity,
+            android.R.layout.simple_dropdown_item_1line,
+            listProvinces
+        )
+        dataBinding.spinnerProvince.adapter = arrayAdapterProvinces
 
         viewModel.getListProvincesFB()
         viewModel.listProvincesFB.observe(this, {
@@ -34,75 +40,98 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
             for (element in it) {
                 listProvinces.add(element.name)
             }
+            arrayAdapterProvinces.notifyDataSetChanged()
         })
 
-        val spinnerProvinces = view?.findViewById(R.id.spinner_province) as Spinner
-        val arrayAdapterProvinces = ArrayAdapter(
-            activity,
-            android.R.layout.simple_dropdown_item_1line,
-            listProvinces
-        ) as SpinnerAdapter
-        spinnerProvinces.adapter = arrayAdapterProvinces
-
-
-        val spinnerDistrict = view?.findViewById(R.id.spinner_districts_on_add) as Spinner
 
         val arrayAdapterDistrict = ArrayAdapter(
             activity,
             android.R.layout.simple_dropdown_item_1line,
             listDistrict
         )
-        spinnerDistrict.adapter = arrayAdapterDistrict
-        spinnerProvinces.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                listDistrict.clear()
-                nameProvince = parent?.getItemAtPosition(position).toString()
-                viewModel.getListDistrictFB(parent?.getItemAtPosition(position).toString())
-                viewModel.listDistrictFBLiveData.observe(this@AddRoomFragment, {
+        dataBinding.spinnerDistrictsOnAdd.adapter = arrayAdapterDistrict
 
-                    it?.let { list ->
-                        for (element in list) {
-                            listDistrict.add(element.name)
+        dataBinding.spinnerProvince.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    listDistrict.clear()
+                    nameProvince = parent?.getItemAtPosition(position).toString()
+                    viewModel.getListDistrictFB(parent?.getItemAtPosition(position).toString())
+                    viewModel.listDistrictFBLiveData.observe(this@AddRoomFragment, {
+
+                        it?.let { list ->
+                            for (element in list) {
+                                listDistrict.add(element.name)
+                            }
                         }
-                    }
-                    arrayAdapterDistrict.notifyDataSetChanged()
-                    Log.d("listNew","${it}")
+                        arrayAdapterDistrict.notifyDataSetChanged()
+                        Log.d("listNew", "${it}")
 
-                    spinnerDistrict.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                        override fun onItemSelected(
-                            parent: AdapterView<*>?,
-                            view: View?,
-                            position: Int,
-                            id: Long
-                        ) {
-                            nameDistricts = if (listDistrict.size == 0) {
-                                "Quuận Huyện"
-                            } else {
-                                parent?.getItemAtPosition(position)
-                                    .toString()
+                        dataBinding.spinnerDistrictsOnAdd.onItemSelectedListener =
+                            object : AdapterView.OnItemSelectedListener {
+                                override fun onItemSelected(
+                                    parent: AdapterView<*>?,
+                                    view: View?,
+                                    position: Int,
+                                    id: Long
+                                ) {
+                                    nameDistricts = if (listDistrict.size == 0) {
+                                        ""
+                                    } else {
+                                        parent?.getItemAtPosition(position)
+                                            .toString()
+                                    }
+
+                                }
+
+                                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                                }
                             }
 
-                        }
+                    })
+                }
 
-                        override fun onNothingSelected(parent: AdapterView<*>?) {
+                override fun onNothingSelected(parent: AdapterView<*>?) {
 
-                        }
-                    }
-
-                })
+                }
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
+        actionListener()
+        spinnerTypeRoom()
 
+    }
+
+    private fun actionListener() {
+        viewModel.listenerBtnAddHome.observe(this, {
+            when (it) {
+                AddRoomViewModel.BTN_IMG_1 -> {
+
+                }
+                AddRoomViewModel.BTN_IMG_2 -> {
+
+                }
+                AddRoomViewModel.BTN_IMG_ACCESS -> {
+
+                }
             }
-        }
+        })
+    }
 
-
+    private fun spinnerTypeRoom() {
+        val listType = arrayListOf("Nhà Nghỉ", "Biệt Thự", "Nhà Riêng")
+        val arrayAdapterTypeRoom = ArrayAdapter(
+            activity,
+            android.R.layout.simple_dropdown_item_1line,
+            listType
+        )
+        dataBinding.spinnerTypeRoom.adapter = arrayAdapterTypeRoom
+        // arrayAdapterTypeRoom.notifyDataSetChanged()
     }
 
     override fun bindViewModel() {

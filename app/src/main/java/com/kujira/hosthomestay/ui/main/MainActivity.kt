@@ -1,6 +1,9 @@
 package com.kujira.hosthomestay.ui.main
 
+import android.content.pm.PackageManager
 import android.os.Bundle
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.NavOptions
@@ -11,8 +14,12 @@ import com.google.firebase.FirebaseApp
 import com.kujira.hosthomestay.R
 
 import com.kujira.hosthomestay.databinding.ActivityMainBinding
+import com.kujira.hosthomestay.ui.add.AddRoomFragment
 import com.kujira.hosthomestay.ui.base.BaseActivity
 import com.kujira.hosthomestay.ui.base.BaseFragment
+import com.kujira.hosthomestay.ui.manager.ManagerRoomFragment
+import com.kujira.hosthomestay.ui.mess.MessageFragment
+import com.kujira.hosthomestay.ui.myacc.MyAccountFragment
 import com.kujira.hosthomestay.utils.printLog
 import java.security.AccessController.getContext
 
@@ -51,23 +58,83 @@ open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
 
 
         listenerAction()
+        requestPermissionCamera()
 
     }
 
-    private fun listenerAction(){
+    private fun requestPermissionCamera() = if (
+        ContextCompat.checkSelfPermission(
+            this, android.Manifest.permission.CAMERA
+        ) != PackageManager.PERMISSION_GRANTED
+        && ContextCompat.checkSelfPermission(
+            this,
+            android.Manifest.permission.RECORD_AUDIO
+        )
+        != PackageManager.PERMISSION_GRANTED
+    ) {
+
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(
+                android.Manifest.permission.CAMERA,
+                android.Manifest.permission.RECORD_AUDIO,
+            ), 1
+        )
+    } else {
+        // startLocalStream()
+    }
+
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        if (requestCode == 1) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                //startLocalStream()
+            } else {
+                requestPermissionCamera()
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
+    private fun listenerAction() {
         mViewModel.onClickMain.observe(this, {
             when (it) {
                 MainViewModel.BTN_MESSAGE -> {
-                    navigate(R.id.messageFragment)
+                    if (currentFragment is MessageFragment) {
+
+                    } else {
+                        navigate(R.id.messageFragment)
+                    }
+
                 }
                 MainViewModel.BTN_MANAGER_ROOM -> {
-                    navigate(R.id.managerRoomFragment)
+                    if (currentFragment is ManagerRoomFragment) {
+
+                    } else {
+                        navigate(R.id.managerRoomFragment)
+                    }
+
                 }
+
                 MainViewModel.BTN_ADD_ROOM -> {
-                    navigate(R.id.addRoomFragment)
+                    if (currentFragment is AddRoomFragment) {
+
+                    } else {
+                        navigate(R.id.addRoomFragment)
+                    }
+
                 }
                 MainViewModel.BTN_MY_ACC -> {
-                    navigate(R.id.myAccountFragment)
+                    if (currentFragment is MyAccountFragment) {
+
+                    } else {
+                        navigate(R.id.myAccountFragment)
+                    }
+
                 }
 
             }

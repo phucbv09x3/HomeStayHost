@@ -44,8 +44,10 @@ data class AddRoomModel(
     var nameRoom: String,
     var s_room: String,
     var numberSleepRoom: String,
-    var convenient : String,
-    var gt_all : String,
+    var convenient: String,
+    var gt_all: String,
     var imageRoom1: String,
     var imageRoom2: String,
+    var status: String,
+    var price: String
 )
