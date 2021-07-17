@@ -96,5 +96,9 @@ class AddRoomViewModel : BaseViewModel() {
         }
     }
 
+    fun putHomeStay(addRoomViewModel: AddRoomViewModel) {
+
+    }
+
 }
 
