@@ -1,10 +1,10 @@
 package com.kujira.hosthomestay.ui.mess
 
-import android.util.Log
-import com.google.firebase.database.FirebaseDatabase
+import android.view.View
 import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.databinding.FragmentMessageBinding
 import com.kujira.hosthomestay.ui.base.BaseFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MessageFragment : BaseFragment<MessageViewModel, FragmentMessageBinding>() {
@@ -16,6 +16,7 @@ class MessageFragment : BaseFragment<MessageViewModel, FragmentMessageBinding>()
 
     override fun initView() {
 
+        activity.linear_on_main.visibility = View.VISIBLE
 //        val databaseReference =
 //            FirebaseDatabase.getInstance().getReference("Host")
 //        viewModel.getPost()

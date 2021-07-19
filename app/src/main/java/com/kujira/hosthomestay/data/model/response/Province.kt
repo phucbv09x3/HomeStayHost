@@ -1,5 +1,7 @@
 package com.kujira.hosthomestay.data.model.response
 
+import android.net.Uri
+
 
 data class ProvinceItem(
     val code: Int,
@@ -45,9 +47,9 @@ data class AddRoomModel(
     var s_room: String,
     var numberSleepRoom: String,
     var convenient: String,
-    var gt_all: String,
-    var imageRoom1: String,
-    var imageRoom2: String,
+    var introduce: String,
+    var imageRoom1: Uri,
+    var imageRoom2: Uri,
     var status: String,
     var price: String
 )

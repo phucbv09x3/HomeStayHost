@@ -3,16 +3,17 @@ package com.kujira.hosthomestay.ui.add
 import android.view.View
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
 import com.kujira.hosthomestay.R
+import com.kujira.hosthomestay.data.model.response.AddRoomModel
 import com.kujira.hosthomestay.data.model.response.DistrictFB
 import com.kujira.hosthomestay.data.model.response.ProvinceFB
 import com.kujira.hosthomestay.ui.base.BaseViewModel
-import kotlinx.android.synthetic.main.fragment_add_room.view.*
 
 class AddRoomViewModel : BaseViewModel() {
 
@@ -21,16 +22,21 @@ class AddRoomViewModel : BaseViewModel() {
 
     var listDistrictFBLiveData = MutableLiveData<MutableList<DistrictFB>>()
     var listProvincesFB = MutableLiveData<MutableList<ProvinceFB>>()
-    var dataReference =
+    private var dataReference =
         FirebaseDatabase.getInstance().getReference("Host")
-
+    private var auth = FirebaseAuth.getInstance()
+    private var dataStoreRef = FirebaseStorage.getInstance().getReference("HostStorage")
     var textWard = ObservableField<String>()
     var nameRoom = ObservableField<String>()
     var sRoom = ObservableField<String>()
     var numberSleepRoom = ObservableField<String>()
-    var textDetail = ObservableField<String>()
+    var textDetailGT = ObservableField<String>()
     var introduce = ObservableField<String>()
+    var price = ObservableField<String>()
     var listenerBtnAddHome = MutableLiveData<Int>()
+
+
+    var notifyPut = MutableLiveData<Int>()
 
     companion object {
         const val BTN_IMG_1 = 0
@@ -96,8 +102,54 @@ class AddRoomViewModel : BaseViewModel() {
         }
     }
 
-    fun putHomeStay(addRoomViewModel: AddRoomViewModel) {
+    fun putHomeStay(addRoom: AddRoomModel) {
+        var linkImg1 = ""
+        var linkImg2 = ""
+        val img = dataStoreRef.child(auth.currentUser!!.uid)
+            .child("image")
+        val imgName1 = img.child("" + addRoom.imageRoom1)
+        val imgName2 = img.child("" + addRoom.imageRoom2)
+        imgName1.putFile(addRoom.imageRoom1)
+            .addOnSuccessListener {
+                imgName1.downloadUrl.addOnCompleteListener { result ->
+                    linkImg1 = result.toString()
+                }
+            }
+        imgName2.putFile(addRoom.imageRoom2)
+            .addOnSuccessListener {
+                imgName2.downloadUrl.addOnCompleteListener { result ->
+                    linkImg2 = result.toString()
+                }
+            }
 
+        dataReference.child("ListRoom").child(auth.currentUser!!.uid)
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val hashMap = HashMap<String, String>()
+                    hashMap["address"] = addRoom.address
+                    hashMap["typeRoom"] = addRoom.typeRoom
+                    hashMap["nameRoom"] = addRoom.nameRoom
+                    hashMap["s_room"] = addRoom.s_room
+                    hashMap["numberSleepRoom"] = addRoom.numberSleepRoom
+                    hashMap["convenient"] = addRoom.convenient
+                    hashMap["introduce"] = addRoom.introduce
+                    hashMap["imageRoom1"] = linkImg1
+                    hashMap["imageRoom2"] = linkImg2
+                    hashMap["status"] = "Còn Phòng"
+                    hashMap["price"] = addRoom.price
+                    dataReference.child(auth.currentUser!!.uid).setValue(hashMap)
+                        .addOnSuccessListener {
+                            notifyPut.value = 1
+                        }
+                        .addOnFailureListener {
+                            notifyPut.value = 0
+                        }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+            })
     }
 
 }

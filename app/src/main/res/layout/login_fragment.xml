@@ -10,35 +10,82 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/tv_below_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/_76sdp"
+            android:text="Đăng nhập để trải nghiệm tôt hơn"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+             />
 
-            <EditText
-                android:id="@+id/accountName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_edt_login"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:hint=" Email"
+            android:text="@={viewModel.email}"
+            android:paddingStart="@dimen/_16sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_below_title" />
 
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_edt_login"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:hint=" Password"
+            android:text="@={viewModel.password}"
+            android:paddingStart="@dimen/_16sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_email" />
 
-            <Button
-                android:id="@+id/buttonLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="@{view-> viewModel.saveUser(view)}"
-                android:text="Login"
-                android:textAllCaps="false" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_btn_login"
+            android:onClick="@{(view)->viewModel.login(view)}"
+            android:text="LOGIN"
+            android:textColor="#fff"
+            android:textSize="@dimen/_17sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_password" />
+        <TextView
+            android:id="@+id/tv_register"
+            android:onClick="@{(view)->viewModel.login(view)}"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:textColor="#00CC00"
+            android:layout_marginRight="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Đăng kí tài khoản mới"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

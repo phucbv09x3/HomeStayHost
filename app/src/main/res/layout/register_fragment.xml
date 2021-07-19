@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -8,14 +8,102 @@
             type="com.kujira.hosthomestay.ui.register.RegisterViewModel" />
     </data>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
+        android:background="@color/colorWhite"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/buttonRegister"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_below_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register" />
-    </RelativeLayout>
+            android:layout_marginTop="@dimen/_76sdp"
+            android:text="Chào mừng thành viên mới "
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <EditText
+            android:id="@+id/edt_userName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_edt_login"
+            android:drawableLeft="@drawable/ic_baseline_person_24"
+            android:hint=" User name"
+            android:text="@={viewModel.userName}"
+            android:paddingStart="@dimen/_16sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_below_title" />
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_edt_login"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:hint=" Email"
+            android:text="@={viewModel.email}"
+            android:paddingStart="@dimen/_16sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_userName" />
+
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_edt_login"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:hint=" Password"
+            android:text="@={viewModel.password}"
+            android:paddingStart="@dimen/_16sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_email" />
+        <EditText
+            android:id="@+id/edt_number_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_edt_login"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:hint=" Phone"
+            android:text="@={viewModel.numberPhone}"
+            android:paddingStart="@dimen/_16sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_password" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_btn_login"
+            android:onClick="@{(view)->viewModel.register(view)}"
+            android:text="Register"
+            android:textColor="#fff"
+            android:textSize="@dimen/_17sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_number_phone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

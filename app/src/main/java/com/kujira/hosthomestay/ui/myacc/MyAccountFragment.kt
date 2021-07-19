@@ -17,7 +17,7 @@ class MyAccountFragment : BaseFragment<MyAccountViewModel, FragmentMyAccountBind
     override fun getResourceLayout(): Int = R.layout.fragment_my_account
 
     override fun initView() {
-
+        viewModel.updateUI()
     }
 
     override fun bindViewModel() {

@@ -2,13 +2,11 @@ package com.kujira.hosthomestay.ui.add
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
-import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Build
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
-import com.google.firebase.ktx.Firebase
 import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.data.model.response.AddRoomModel
 import com.kujira.hosthomestay.data.model.response.ProvinceFB
@@ -24,8 +22,8 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
     private var nameProvince = ""
     private var nameDistricts = ""
     private var nameTypeRoom = ""
-    private var uriImg1 = ""
-    private var uriImg2 = ""
+    private var uriImg1: Uri? = null
+    private var uriImg2: Uri? = null
     private var listProvincesFB = mutableListOf<ProvinceFB>()
     override fun createViewModel(): Class<AddRoomViewModel> {
         return AddRoomViewModel::class.java
@@ -79,8 +77,6 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
                             }
                         }
                         arrayAdapterDistrict.notifyDataSetChanged()
-                        Log.d("listNew", "${it}")
-
                         dataBinding.spinnerDistrictsOnAdd.onItemSelectedListener =
                             object : AdapterView.OnItemSelectedListener {
                                 override fun onItemSelected(
@@ -126,17 +122,34 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
                     requestImage(222)
                 }
                 AddRoomViewModel.BTN_IMG_ACCESS -> {
-                    if (viewModel.textWard.get()!!.isNotEmpty() && viewModel.nameRoom.get()!!
-                            .isNotEmpty()
-                        && viewModel.sRoom.get()!!.isNotEmpty() && viewModel.numberSleepRoom.get()!!
-                            .isNotEmpty()
-                        && viewModel.introduce.get()!!.isNotEmpty() && viewModel.textDetail.get()!!
-                            .isNotEmpty()
-                        && uriImg1.isNotEmpty() && uriImg2.isNotEmpty()
+                    val wardAddress = viewModel.textWard.get()
+                    val nameRoom = viewModel.nameRoom.get()
+                    val sRoom = viewModel.sRoom.get()
+                    val numberSleepRoom = viewModel.numberSleepRoom.get()
+                    val introduce = viewModel.introduce.get()
+                    val textDetail = viewModel.textDetailGT.get()
+                    val price = viewModel.price.get()
+                    if (wardAddress?.isNotEmpty() == true && nameRoom?.isNotEmpty() == true
+                        && sRoom?.isNotEmpty() == true && numberSleepRoom?.isNotEmpty() == true
+                        && introduce?.isNotEmpty() == true && textDetail?.isNotEmpty() == true
+                        && uriImg1.toString().isNotEmpty() && uriImg2.toString().isNotEmpty()
                     ) {
-                        val address = viewModel.textWard.get() +","+nameDistricts+","+nameProvince
-                        val addRoomViewModel =AddRoomModel(address,nameTypeRoom)
-                        viewModel.putHomeStay()
+                        val address =
+                            viewModel.textWard.get() + "," + nameDistricts + "," + nameProvince
+                        val model = AddRoomModel(
+                            address,
+                            nameTypeRoom,
+                            nameRoom,
+                            sRoom,
+                            numberSleepRoom,
+                            textDetail,
+                            introduce,
+                            uriImg1!!,
+                            uriImg2!!,
+                            "Trống",
+                            price!!
+                        )
+                        viewModel.putHomeStay(model)
                     } else {
                         Toast.makeText(context, "Vui lòng nhập đủ thông tin !", Toast.LENGTH_LONG)
                             .show()
@@ -161,14 +174,14 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 111 && resultCode == RESULT_OK) {
-            val imageBitmap = data?.data
-            img_1.setImageURI(imageBitmap)
-            uriImg1 = imageBitmap.toString()
+            val imageUri = data?.data
+            img_1.setImageURI(imageUri)
+            uriImg1 = imageUri
         }
         if (requestCode == 222 && resultCode == RESULT_OK) {
-            val imageBitmap = data?.data
-            img_2.setImageURI(imageBitmap)
-            uriImg2 = imageBitmap.toString()
+            val imageUri = data?.data
+            img_2.setImageURI(imageUri)
+            uriImg2 = imageUri
         }
     }
 
@@ -199,11 +212,17 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
 
                 }
             }
-        // arrayAdapterTypeRoom.notifyDataSetChanged()
     }
 
     override fun bindViewModel() {
+        viewModel.notifyPut.observe(this, {
+            if (it == 1) {
+                Toast.makeText(context, "sussecc", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(context, "faile", Toast.LENGTH_LONG).show()
 
+            }
+        })
     }
 
 }

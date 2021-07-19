@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/messageFragment">
+    app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.kujira.hosthomestay.ui.login.LoginFragment"
@@ -31,18 +31,14 @@
         android:label="Detail Screen" />
     <fragment
         android:id="@+id/addRoomFragment"
-        android:name="com.kujira.hosthomestay.ui.add.AddRoomFragment"
-         />
+        android:name="com.kujira.hosthomestay.ui.add.AddRoomFragment" />
     <fragment
         android:id="@+id/messageFragment"
-        android:name="com.kujira.hosthomestay.ui.mess.MessageFragment"
-        />
+        android:name="com.kujira.hosthomestay.ui.mess.MessageFragment" />
     <fragment
         android:id="@+id/managerRoomFragment"
-        android:name="com.kujira.hosthomestay.ui.manager.ManagerRoomFragment"
-        />
+        android:name="com.kujira.hosthomestay.ui.manager.ManagerRoomFragment" />
     <fragment
         android:id="@+id/myAccountFragment"
-        android:name="com.kujira.hosthomestay.ui.myacc.MyAccountFragment"
-        />
+        android:name="com.kujira.hosthomestay.ui.myacc.MyAccountFragment" />
 </navigation>
