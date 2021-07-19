@@ -48,8 +48,9 @@ data class AddRoomModel(
     var numberSleepRoom: String,
     var convenient: String,
     var introduce: String,
-    var imageRoom1: Uri,
-    var imageRoom2: Uri,
+    var imageRoom1: String,
+    var imageRoom2: String,
     var status: String,
-    var price: String
+    var price: String,
+    var uid : String
 )

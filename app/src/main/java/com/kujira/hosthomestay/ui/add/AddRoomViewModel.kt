@@ -1,5 +1,6 @@
 package com.kujira.hosthomestay.ui.add
 
+import android.net.Uri
 import android.view.View
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
@@ -24,24 +25,28 @@ class AddRoomViewModel : BaseViewModel() {
     var listProvincesFB = MutableLiveData<MutableList<ProvinceFB>>()
     private var dataReference =
         FirebaseDatabase.getInstance().getReference("Host")
-    private var auth = FirebaseAuth.getInstance()
+    var auth = FirebaseAuth.getInstance()
     private var dataStoreRef = FirebaseStorage.getInstance().getReference("HostStorage")
-    var textWard = ObservableField<String>()
-    var nameRoom = ObservableField<String>()
-    var sRoom = ObservableField<String>()
-    var numberSleepRoom = ObservableField<String>()
-    var textDetailGT = ObservableField<String>()
-    var introduce = ObservableField<String>()
-    var price = ObservableField<String>()
+    var textWard = ObservableField<String>("xa")
+    var nameRoom = ObservableField<String>("101")
+    var sRoom = ObservableField<String>("24")
+    var numberSleepRoom = ObservableField<String>("3")
+    var textDetailGT = ObservableField<String>("ok")
+    var introduce = ObservableField<String>("ok")
+    var price = ObservableField<String>("68787")
     var listenerBtnAddHome = MutableLiveData<Int>()
 
+    var listenerSuccess = MutableLiveData<Int>()
 
     var notifyPut = MutableLiveData<Int>()
+    var linkImg1 = ""
+    var linkImg2 = ""
 
     companion object {
         const val BTN_IMG_1 = 0
         const val BTN_IMG_2 = 1
         const val BTN_IMG_ACCESS = 2
+        const val BTN_IMG_ACCESS_ALL = 3
     }
 
     fun getListProvincesFB() {
@@ -99,57 +104,76 @@ class AddRoomViewModel : BaseViewModel() {
             R.id.btn_access_add -> {
                 listenerBtnAddHome.value = BTN_IMG_ACCESS
             }
+            R.id.btn_access_all -> {
+                listenerBtnAddHome.value = BTN_IMG_ACCESS_ALL
+            }
         }
     }
 
-    fun putHomeStay(addRoom: AddRoomModel) {
-        var linkImg1 = ""
-        var linkImg2 = ""
-        val img = dataStoreRef.child(auth.currentUser!!.uid)
+    fun putHomeStay(img1: Uri, img2: Uri) {
+        val imgRef = dataStoreRef.child(auth.currentUser!!.uid)
             .child("image")
-        val imgName1 = img.child("" + addRoom.imageRoom1)
-        val imgName2 = img.child("" + addRoom.imageRoom2)
-        imgName1.putFile(addRoom.imageRoom1)
+        val imgName1 = imgRef.child(img1.toString())
+        imgName1.putFile(img1)
             .addOnSuccessListener {
-                imgName1.downloadUrl.addOnCompleteListener { result ->
-                    linkImg1 = result.toString()
-                }
-            }
-        imgName2.putFile(addRoom.imageRoom2)
-            .addOnSuccessListener {
-                imgName2.downloadUrl.addOnCompleteListener { result ->
-                    linkImg2 = result.toString()
+                imgName1.downloadUrl.addOnCompleteListener { p0 ->
+                    if (p0.isSuccessful) {
+                        linkImg1 = p0.result.toString()
+
+                    }
+                }.addOnFailureListener {
+
                 }
             }
 
-        dataReference.child("ListRoom").child(auth.currentUser!!.uid)
-            .addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val hashMap = HashMap<String, String>()
-                    hashMap["address"] = addRoom.address
-                    hashMap["typeRoom"] = addRoom.typeRoom
-                    hashMap["nameRoom"] = addRoom.nameRoom
-                    hashMap["s_room"] = addRoom.s_room
-                    hashMap["numberSleepRoom"] = addRoom.numberSleepRoom
-                    hashMap["convenient"] = addRoom.convenient
-                    hashMap["introduce"] = addRoom.introduce
-                    hashMap["imageRoom1"] = linkImg1
-                    hashMap["imageRoom2"] = linkImg2
-                    hashMap["status"] = "Còn Phòng"
-                    hashMap["price"] = addRoom.price
-                    dataReference.child(auth.currentUser!!.uid).setValue(hashMap)
-                        .addOnSuccessListener {
-                            notifyPut.value = 1
-                        }
-                        .addOnFailureListener {
-                            notifyPut.value = 0
-                        }
-                }
 
-                override fun onCancelled(error: DatabaseError) {
+        val imgName2 = imgRef.child(img2.toString())
+        imgName2.putFile(img2)
+            .addOnSuccessListener {
+                imgName2.downloadUrl.addOnCompleteListener { p0 ->
+                    if (p0.isSuccessful) {
+                        linkImg2 = p0.result.toString()
+                        listenerSuccess.value = 1
+
+                    }
+                }.addOnFailureListener {
 
                 }
-            })
+            }
+    }
+
+    fun accAll(addRoom: AddRoomModel) {
+        if (linkImg2.isNotEmpty() && linkImg1.isNotEmpty()) {
+            dataReference.child("ListRoom").child(auth.currentUser!!.uid)
+                .addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        val hashMap = HashMap<String, String>()
+                        hashMap["address"] = addRoom.address
+                        hashMap["typeRoom"] = addRoom.typeRoom
+                        hashMap["nameRoom"] = addRoom.nameRoom
+                        hashMap["s_room"] = addRoom.s_room
+                        hashMap["numberSleepRoom"] = addRoom.numberSleepRoom
+                        hashMap["convenient"] = addRoom.convenient
+                        hashMap["introduce"] = addRoom.introduce
+                        hashMap["imageRoom1"] = linkImg1
+                        hashMap["imageRoom2"] = linkImg2
+                        hashMap["status"] = "Còn Phòng"
+                        hashMap["price"] = addRoom.price
+                        hashMap["uid"] = addRoom.uid
+                        dataReference.child("ListRoom").push().setValue(hashMap)
+                            .addOnSuccessListener {
+                                notifyPut.value = 1
+                            }
+                            .addOnFailureListener {
+                                notifyPut.value = 0
+                            }
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+
+                    }
+                })
+        }
     }
 
 }

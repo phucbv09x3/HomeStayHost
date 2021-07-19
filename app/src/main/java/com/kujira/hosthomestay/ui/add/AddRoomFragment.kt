@@ -14,6 +14,9 @@ import com.kujira.hosthomestay.databinding.FragmentAddRoomBinding
 import com.kujira.hosthomestay.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_add_room.*
 import kotlinx.android.synthetic.main.fragment_my_account.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>() {
@@ -33,6 +36,7 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun initView() {
+
 
         val arrayAdapterProvinces = ArrayAdapter(
             activity,
@@ -113,6 +117,7 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
     }
 
     private fun actionListener() {
+        val pr = ProgressDialog(context)
         viewModel.listenerBtnAddHome.observe(this, {
             when (it) {
                 AddRoomViewModel.BTN_IMG_1 -> {
@@ -122,6 +127,19 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
                     requestImage(222)
                 }
                 AddRoomViewModel.BTN_IMG_ACCESS -> {
+                    CoroutineScope(Dispatchers.Main).launch {
+                        viewModel.putHomeStay(uriImg1!!, uriImg2!!)
+                    }
+                    pr.show()
+                    viewModel.listenerSuccess.observe(this,{
+                        if (it==1){
+                            dataBinding.btnAccessAll.visibility = View.VISIBLE
+                            pr.dismiss()
+                        }
+                    })
+
+                }
+                AddRoomViewModel.BTN_IMG_ACCESS_ALL -> {
                     val wardAddress = viewModel.textWard.get()
                     val nameRoom = viewModel.nameRoom.get()
                     val sRoom = viewModel.sRoom.get()
@@ -144,12 +162,25 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
                             numberSleepRoom,
                             textDetail,
                             introduce,
-                            uriImg1!!,
-                            uriImg2!!,
+                            viewModel.linkImg1,
+                            viewModel.linkImg2,
                             "Trống",
-                            price!!
+                            price ?: "",
+                            viewModel.auth.currentUser!!.uid
                         )
-                        viewModel.putHomeStay(model)
+                        CoroutineScope(Dispatchers.Main).launch {
+                            viewModel.accAll(model)
+                        }
+
+                        viewModel.notifyPut.observe(this, {
+                            if (it == 1) {
+                                Toast.makeText(context, "sussecc", Toast.LENGTH_LONG).show()
+                            } else {
+                                Toast.makeText(context, "faile", Toast.LENGTH_LONG).show()
+
+                            }
+                        })
+
                     } else {
                         Toast.makeText(context, "Vui lòng nhập đủ thông tin !", Toast.LENGTH_LONG)
                             .show()
@@ -176,6 +207,7 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
         if (requestCode == 111 && resultCode == RESULT_OK) {
             val imageUri = data?.data
             img_1.setImageURI(imageUri)
+
             uriImg1 = imageUri
         }
         if (requestCode == 222 && resultCode == RESULT_OK) {
@@ -215,14 +247,7 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
     }
 
     override fun bindViewModel() {
-        viewModel.notifyPut.observe(this, {
-            if (it == 1) {
-                Toast.makeText(context, "sussecc", Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(context, "faile", Toast.LENGTH_LONG).show()
 
-            }
-        })
     }
 
 }
