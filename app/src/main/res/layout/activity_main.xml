@@ -33,22 +33,22 @@
             android:background="#fff"
             android:elevation="@dimen/_14sdp"
             android:orientation="horizontal"
-            android:weightSum="4"
+            android:weightSum="3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent">
 
-            <Button
-                android:id="@+id/btn_message_on_main"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/colorWhite"
-                android:drawableTop="@drawable/ic_baseline_message_24"
-                android:onClick="@{(view)-> viewModel.click(view)}"
-                android:padding="@dimen/_4sdp"
-                android:text="Tin nhắn"
-                android:textAllCaps="false"
-                android:textSize="@dimen/_6sdp" />
+<!--            <Button-->
+<!--                android:id="@+id/btn_message_on_main"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@color/colorWhite"-->
+<!--                android:drawableTop="@drawable/ic_baseline_message_24"-->
+<!--                android:onClick="@{(view)-> viewModel.click(view)}"-->
+<!--                android:padding="@dimen/_4sdp"-->
+<!--                android:text="Tin nhắn"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textSize="@dimen/_6sdp" />-->
 
             <Button
                 android:id="@+id/btn_managerRoom_on_main"

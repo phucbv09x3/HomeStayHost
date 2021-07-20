@@ -19,10 +19,10 @@ class MainViewModel : BaseViewModel() {
     var onClickMain = MutableLiveData<Int>()
     fun click(view: View) {
         when (view.id) {
-            R.id.btn_message_on_main -> {
-                onClickMain.value = BTN_MESSAGE
-
-            }
+//            R.id.btn_message_on_main -> {
+//                onClickMain.value = BTN_MESSAGE
+//
+//            }
             R.id.btn_managerRoom_on_main -> {
                 onClickMain.value = BTN_MANAGER_ROOM
             }

@@ -27,13 +27,13 @@ class AddRoomViewModel : BaseViewModel() {
         FirebaseDatabase.getInstance().getReference("Host")
     var auth = FirebaseAuth.getInstance()
     private var dataStoreRef = FirebaseStorage.getInstance().getReference("HostStorage")
-    var textWard = ObservableField<String>("xa")
-    var nameRoom = ObservableField<String>("101")
-    var sRoom = ObservableField<String>("24")
-    var numberSleepRoom = ObservableField<String>("3")
-    var textDetailGT = ObservableField<String>("ok")
-    var introduce = ObservableField<String>("ok")
-    var price = ObservableField<String>("68787")
+    var textWard = ObservableField<String>()
+    var nameRoom = ObservableField<String>()
+    var sRoom = ObservableField<String>()
+    var numberSleepRoom = ObservableField<String>()
+    var textDetailGT = ObservableField<String>()
+    var introduce = ObservableField<String>()
+    var price = ObservableField<String>()
     var listenerBtnAddHome = MutableLiveData<Int>()
 
     var listenerSuccess = MutableLiveData<Int>()
@@ -147,7 +147,9 @@ class AddRoomViewModel : BaseViewModel() {
             dataReference.child("ListRoom").child(auth.currentUser!!.uid)
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
+                        val key = dataReference.push().key.toString()
                         val hashMap = HashMap<String, String>()
+                        hashMap["id"] = key
                         hashMap["address"] = addRoom.address
                         hashMap["typeRoom"] = addRoom.typeRoom
                         hashMap["nameRoom"] = addRoom.nameRoom
@@ -160,7 +162,8 @@ class AddRoomViewModel : BaseViewModel() {
                         hashMap["status"] = "Còn Phòng"
                         hashMap["price"] = addRoom.price
                         hashMap["uid"] = addRoom.uid
-                        dataReference.child("ListRoom").push().setValue(hashMap)
+
+                        dataReference.child("ListRoom").child(key).setValue(hashMap)
                             .addOnSuccessListener {
                                 notifyPut.value = 1
                             }

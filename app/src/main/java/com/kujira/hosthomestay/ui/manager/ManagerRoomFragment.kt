@@ -1,9 +1,11 @@
 package com.kujira.hosthomestay.ui.manager
 
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.databinding.FragmentMessageBinding
 import com.kujira.hosthomestay.ui.base.BaseFragment
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_manager_room.*
 
 
@@ -15,6 +17,7 @@ class ManagerRoomFragment : BaseFragment<ManagerRoomViewModel, FragmentMessageBi
     override fun getResourceLayout(): Int = R.layout.fragment_manager_room
 
     override fun initView() {
+        activity.linear_on_main.visibility = View.VISIBLE
         rcy_manager.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = ManagerRoomAdapter(mutableListOf())

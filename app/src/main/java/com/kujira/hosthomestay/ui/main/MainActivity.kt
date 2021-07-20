@@ -55,8 +55,6 @@ open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
         //setSupportActionBar(toolbar)
         navController.addOnDestinationChangedListener(this)
 //        NavigationUI.setupActionBarWithNavController(this, navController)
-
-
         listenerAction()
         requestPermissionCamera()
 
@@ -103,14 +101,14 @@ open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
     private fun listenerAction() {
         mViewModel.onClickMain.observe(this, {
             when (it) {
-                MainViewModel.BTN_MESSAGE -> {
-                    if (currentFragment is MessageFragment) {
-
-                    } else {
-                        navigate(R.id.messageFragment)
-                    }
-
-                }
+//                MainViewModel.BTN_MESSAGE -> {
+//                    if (currentFragment is MessageFragment) {
+//
+//                    } else {
+//                        navigate(R.id.messageFragment)
+//                    }
+//
+//                }
                 MainViewModel.BTN_MANAGER_ROOM -> {
                     if (currentFragment is ManagerRoomFragment) {
 

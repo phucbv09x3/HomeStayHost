@@ -38,7 +38,7 @@ class LoginViewModel : BaseViewModel() {
                     if (it.isSuccessful) {
                         val user = auth.currentUser
                         if (user!!.isEmailVerified) {
-                            navigation.navigate(R.id.messageFragment)
+                            navigation.navigate(R.id.managerRoomFragment)
                         } else {
                             authFail.value = R.string.error_auth
                         }
@@ -48,12 +48,13 @@ class LoginViewModel : BaseViewModel() {
             authFail.value = 1
         }
     }
-    fun checkCurrentUser(){
-        Log.d("currentUSer","${auth.currentUser?.isEmailVerified}")
-        if (auth.currentUser?.isEmailVerified == false || auth.currentUser == null){
 
-        }else{
-            navigation.navigate(R.id.messageFragment)
+    fun checkCurrentUser() {
+        Log.d("currentUSer", "${auth.currentUser?.isEmailVerified}")
+        if (auth.currentUser?.isEmailVerified == false || auth.currentUser == null) {
+
+        } else {
+            navigation.navigate(R.id.managerRoomFragment)
         }
     }
 }

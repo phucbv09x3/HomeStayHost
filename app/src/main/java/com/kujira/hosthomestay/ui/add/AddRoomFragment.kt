@@ -155,6 +155,7 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
                         val address =
                             viewModel.textWard.get() + "," + nameDistricts + "," + nameProvince
                         val model = AddRoomModel(
+                            "",
                             address,
                             nameTypeRoom,
                             nameRoom,

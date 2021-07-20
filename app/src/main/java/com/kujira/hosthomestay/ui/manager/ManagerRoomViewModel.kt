@@ -23,6 +23,7 @@ class ManagerRoomViewModel : BaseViewModel() {
                 listRoom.clear()
                 for (snap in snapshot.children) {
                     val obStatus = AddRoomModel(
+                        snap.child("id").value.toString(),
                         snap.child("address").value.toString(),
                         snap.child("typeRoom").value.toString(),
                         snap.child("nameRoom").value.toString(),

@@ -41,6 +41,7 @@ data class DistrictFB(
 )
 
 data class AddRoomModel(
+    var id : String,
     var address: String,
     var typeRoom: String,
     var nameRoom: String,
