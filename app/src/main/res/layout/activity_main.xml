@@ -50,20 +50,22 @@
 <!--                android:textAllCaps="false"-->
 <!--                android:textSize="@dimen/_6sdp" />-->
 
-            <Button
+            <TextView
                 android:id="@+id/btn_managerRoom_on_main"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:background="@color/colorWhite"
                 android:drawableTop="@drawable/ic_baseline_calendar_today_24"
                 android:onClick="@{(view)->viewModel.click(view)}"
                 android:padding="@dimen/_4sdp"
                 android:text="Quản lí"
+                android:textColor="@color/colorBlack"
                 android:textAllCaps="false"
-                android:textSize="@dimen/_6sdp" />
+                android:textSize="@dimen/_10sdp" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_add_room_on_main"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -73,10 +75,14 @@
                 android:onClick="@{(view)->viewModel.click(view)}"
                 android:padding="@dimen/_4sdp"
                 android:text="Thêm mới"
+                android:gravity="center"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/colorBlack"
                 android:textAllCaps="false"
-                android:textSize="@dimen/_6sdp" />
 
-            <Button
+                />
+
+            <TextView
                 android:id="@+id/btn_my_account_on_main"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -86,8 +92,11 @@
                 android:onClick="@{(view)->viewModel.click(view)}"
                 android:padding="@dimen/_4sdp"
                 android:text="Hồ sơ"
+                android:gravity="center"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/colorBlack"
                 android:textAllCaps="false"
-                android:textSize="@dimen/_6sdp" />
+                 />
 
 
         </LinearLayout>

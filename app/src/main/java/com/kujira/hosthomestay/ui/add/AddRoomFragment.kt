@@ -12,6 +12,7 @@ import com.kujira.hosthomestay.data.model.response.AddRoomModel
 import com.kujira.hosthomestay.data.model.response.ProvinceFB
 import com.kujira.hosthomestay.databinding.FragmentAddRoomBinding
 import com.kujira.hosthomestay.ui.base.BaseFragment
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_add_room.*
 import kotlinx.android.synthetic.main.fragment_my_account.*
 import kotlinx.coroutines.CoroutineScope
@@ -36,7 +37,9 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun initView() {
-
+        activity.btn_managerRoom_on_main.setTextColor(context.getColor(R.color.colorBlack))
+        activity.btn_add_room_on_main.setTextColor(context.getColor(R.color.rdc))
+        activity.btn_my_account_on_main.setTextColor(context.getColor(R.color.colorBlack))
 
         val arrayAdapterProvinces = ArrayAdapter(
             activity,
@@ -175,9 +178,9 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
 
                         viewModel.notifyPut.observe(this, {
                             if (it == 1) {
-                                Toast.makeText(context, "sussecc", Toast.LENGTH_LONG).show()
+                                Toast.makeText(context, "Thành công!", Toast.LENGTH_LONG).show()
                             } else {
-                                Toast.makeText(context, "faile", Toast.LENGTH_LONG).show()
+                                Toast.makeText(context, "Thất bại !", Toast.LENGTH_LONG).show()
 
                             }
                         })

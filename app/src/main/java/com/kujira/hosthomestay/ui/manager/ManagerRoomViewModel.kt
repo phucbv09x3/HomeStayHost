@@ -49,4 +49,32 @@ class ManagerRoomViewModel : BaseViewModel() {
             }
         })
     }
+
+    fun removeRoom(addRoomModel: AddRoomModel) {
+        dataReferences.child(addRoomModel.id).removeValue()
+    }
+
+    var listener = MutableLiveData<Int>()
+    fun editRoom(addRoomModel: AddRoomModel) {
+        dataReferences.orderByChild("id").equalTo(addRoomModel.id).limitToFirst(1)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val hash = HashMap<String, Any>()
+                    hash["nameRoom"] = addRoomModel.nameRoom
+                    hash["s_room"] = addRoomModel.s_room
+                    hash["numberSleepRoom"] = addRoomModel.numberSleepRoom
+                    hash["convenient"] = addRoomModel.convenient
+                    hash["introduce"] = addRoomModel.introduce
+                    hash["price"] = addRoomModel.price
+                    dataReferences.child(addRoomModel.id).updateChildren(hash)
+                        .addOnSuccessListener {
+                            listener.value = 1
+                        }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+            })
+    }
 }

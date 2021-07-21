@@ -202,7 +202,7 @@
                 app:layout_constraintTop_toBottomOf="@id/spinner_type_room" />
 
             <EditText
-                android:id="@+id/edt_room_name"
+                android:id="@+id/edt_room_name_dialog"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
@@ -225,7 +225,7 @@
                 android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="@id/tv_qg"
-                app:layout_constraintTop_toBottomOf="@id/edt_room_name" />
+                app:layout_constraintTop_toBottomOf="@id/edt_room_name_dialog" />
 
             <TextView
                 android:id="@+id/tv_s_room"
@@ -240,7 +240,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_describe" />
 
             <EditText
-                android:id="@+id/edt_s_room"
+                android:id="@+id/edt_s_room_dialog"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
@@ -266,7 +266,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_s_room" />
 
             <EditText
-                android:id="@+id/edt_sleep_room"
+                android:id="@+id/edt_sleep_room_dialog"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
@@ -293,7 +293,7 @@
 
 
             <EditText
-                android:id="@+id/edt_detail"
+                android:id="@+id/edt_detail_dialog"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
@@ -318,7 +318,7 @@
                 android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="@id/tv_ward"
-                app:layout_constraintTop_toBottomOf="@id/edt_detail" />
+                app:layout_constraintTop_toBottomOf="@id/edt_detail_dialog" />
 
             <TextView
                 android:id="@+id/tv_detail_all"
@@ -331,11 +331,11 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/_10sdp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_ward"
-                app:layout_constraintRight_toRightOf="@id/edt_room_name"
+                app:layout_constraintRight_toRightOf="@id/edt_room_name_dialog"
                 app:layout_constraintTop_toBottomOf="@id/tv_title_detail_all" />
 
             <EditText
-                android:id="@+id/edt_detail_all"
+                android:id="@+id/edt_detail_all_dialog"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
@@ -360,7 +360,7 @@
                 android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="@id/tv_ward"
-                app:layout_constraintTop_toBottomOf="@id/edt_detail_all" />
+                app:layout_constraintTop_toBottomOf="@id/edt_detail_all_dialog" />
 
             <Button
                 android:id="@+id/btn_add_img_1"
@@ -369,7 +369,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/ic_baseline_add_24"
                 android:onClick="@{(view)->viewModel.onClick(view)}"
-                app:layout_constraintRight_toRightOf="@id/edt_detail_all"
+                app:layout_constraintRight_toRightOf="@id/edt_detail_all_dialog"
                 app:layout_constraintTop_toBottomOf="@id/add_image" />
 
             <ImageView
@@ -391,7 +391,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/ic_baseline_add_24"
                 android:onClick="@{(view)->viewModel.onClick(view)}"
-                app:layout_constraintRight_toRightOf="@id/edt_detail_all"
+                app:layout_constraintRight_toRightOf="@id/edt_detail_all_dialog"
                 app:layout_constraintTop_toBottomOf="@id/img_1" />
 
             <ImageView
@@ -418,7 +418,7 @@
                 app:layout_constraintTop_toBottomOf="@id/img_2" />
 
             <EditText
-                android:id="@+id/edt_price"
+                android:id="@+id/edt_price_dialog"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
@@ -446,7 +446,7 @@
                 android:textColor="@color/colorWhite"
 
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edt_price" />
+                app:layout_constraintTop_toBottomOf="@id/edt_price_dialog" />
             <Button
                 android:id="@+id/btn_access_all"
                 android:layout_width="wrap_content"

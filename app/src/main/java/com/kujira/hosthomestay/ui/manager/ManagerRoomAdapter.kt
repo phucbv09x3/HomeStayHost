@@ -9,7 +9,7 @@ import com.kujira.hosthomestay.data.model.response.AddRoomModel
 import com.kujira.hosthomestay.databinding.ItemManagerBinding
 import kotlinx.android.synthetic.main.item_manager.view.*
 
-class ManagerRoomAdapter(var listRoom: MutableList<AddRoomModel>) :
+class ManagerRoomAdapter(var listRoom: MutableList<AddRoomModel>, var click: IClick) :
     RecyclerView.Adapter<ManagerRoomAdapter.ManagerHolder>() {
     fun setList(mutableList: MutableList<AddRoomModel>) {
         listRoom = mutableList
@@ -27,6 +27,8 @@ class ManagerRoomAdapter(var listRoom: MutableList<AddRoomModel>) :
 
     override fun onBindViewHolder(holder: ManagerRoomAdapter.ManagerHolder, position: Int) {
         holder.setUp(listRoom[position])
+        holder.click(listRoom[position])
+        holder.longClick(listRoom[position])
     }
 
     override fun getItemCount(): Int = listRoom.size
@@ -39,5 +41,23 @@ class ManagerRoomAdapter(var listRoom: MutableList<AddRoomModel>) :
             itemView.name_room.text = itemData.nameRoom
             itemView.status.text = itemData.status
         }
+
+        fun click(addRoomModel: AddRoomModel) {
+            itemView.btn_remove_room.setOnClickListener {
+                click.click(addRoomModel)
+            }
+
+        }
+        fun longClick(addRoomModel: AddRoomModel){
+            itemView.setOnLongClickListener {
+                click.longClick(addRoomModel)
+               return@setOnLongClickListener true
+            }
+        }
     }
+}
+
+interface IClick {
+    fun click(addRoomModel: AddRoomModel)
+    fun longClick(addRoomModel: AddRoomModel)
 }

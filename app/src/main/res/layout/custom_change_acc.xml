@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_8sdp"
+    android:layout_gravity="center"
+    android:background="@drawable/custom_bg_dialog"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_title_edit"
+        android:text="Thay dổi thông tin cá nhân"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/edt_new_name"
+        android:hint="Tên mới"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_edit"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/_6sdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/edt_new_phone"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:hint="Số điện thoại mới"
+        app:layout_constraintTop_toBottomOf="@id/edt_new_name"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/_6sdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="wrap_content"/>
+     <Button
+         android:id="@+id/btn_change_acc"
+         android:text="Thay đổi"
+         android:layout_marginTop="@dimen/_4sdp"
+         app:layout_constraintLeft_toLeftOf="parent"
+         app:layout_constraintRight_toRightOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/edt_new_phone"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
