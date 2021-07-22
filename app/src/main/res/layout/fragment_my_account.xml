@@ -55,12 +55,13 @@
             android:layout_marginLeft="@dimen/_18sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginRight="@dimen/_18sdp"
-            android:textSize="@dimen/_12sdp"
-            android:textColor="@color/colorBlack"
             android:text="@={viewModel.myPhone}"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_12sdp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/circle_my_acc" />
+
         <TextView
             android:id="@+id/line"
             android:layout_width="match_parent"
@@ -96,12 +97,15 @@
             android:layout_marginLeft="@dimen/_18sdp"
             android:layout_marginTop="@dimen/_16sdp"
             android:layout_marginRight="@dimen/_18sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="#996600"
             android:text="Đăng xuất"
+            android:padding="@dimen/_2sdp"
             android:textAllCaps="false"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_17sdp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_edit" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
 
         <TextView
             android:id="@+id/line2"
@@ -112,9 +116,10 @@
             android:layout_marginRight="@dimen/_18sdp"
             android:background="@color/colorBlack"
             android:textSize="@dimen/_1sdp"
+
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_logout" />
+            app:layout_constraintTop_toBottomOf="@id/tv_edit" />
 
         <TextView
             android:id="@+id/tv_version"

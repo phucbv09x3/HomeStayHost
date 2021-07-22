@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.databinding.FragmentMyAccountBinding
@@ -35,8 +36,33 @@ class MyAccountFragment : BaseFragment<MyAccountViewModel, FragmentMyAccountBind
             val phoneNew = dialogView.findViewById<EditText>(R.id.edt_new_phone).text
             dialogView.findViewById<Button>(R.id.btn_change_acc).setOnClickListener {
                 viewModel.changeAcc(nameNew.toString(), phoneNew.toString())
+                viewModel.listener.observe(this,{
+                    if (it == MyAccountViewModel.SUCCESS){
+                        alertDialog.dismiss()
+                        Toast.makeText(context,getString(R.string.success),Toast.LENGTH_LONG).show()
+                    }else{
+                        Toast.makeText(context,getString(R.string.error),Toast.LENGTH_LONG).show()
+                    }
+                })
             }
             alertDialog.show()
         }
+
+
+        dataBinding.tvLogout.setOnClickListener {
+            val alertDialog = android.app.AlertDialog.Builder(context).create()
+            alertDialog.setTitle("Đăng xuất")
+            alertDialog.setMessage("Bạn vẫn muốn đăng xuất!")
+            alertDialog.setButton(
+                AlertDialog.BUTTON_NEUTRAL, "OK"
+            ) { dialog, _ ->
+                viewModel.logOut()
+                replaceFragment(R.id.loginFragment)
+                alertDialog.dismiss()
+            }
+            alertDialog.show()
+
+        }
+
     }
 }
