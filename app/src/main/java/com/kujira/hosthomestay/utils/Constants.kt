@@ -11,5 +11,6 @@ import androidx.datastore.preferences.preferencesDataStore
 object Constants {
     const val EMPTY = ""
     const val REQUEST_TIMEOUT = 30L
+    const val BASE_URL_PROVINCE = "https://provinces.open-api.vn"
 }
 

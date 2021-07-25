@@ -105,4 +105,17 @@ class ManagerRoomFragment : BaseFragment<ManagerRoomViewModel, FragmentMessageBi
         }
         alertDialog.show()
     }
+
+    override fun clickExitRoom(addRoomModel: AddRoomModel) {
+        val alertDialog = android.app.AlertDialog.Builder(context).create()
+        alertDialog.setTitle("Khách hàng trả phòng")
+        alertDialog.setMessage("Đã trả !")
+        alertDialog.setButton(
+            AlertDialog.BUTTON_NEUTRAL, "OK"
+        ) { dialog, _ ->
+            viewModel.cancelRoom(addRoomModel.id)
+            dialog.dismiss()
+        }
+        alertDialog.show()
+    }
 }

@@ -1,6 +1,7 @@
 package com.kujira.hosthomestay.ui.manager
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.databinding.library.baseAdapters.BR
@@ -29,6 +30,7 @@ class ManagerRoomAdapter(var listRoom: MutableList<AddRoomModel>, var click: ICl
         holder.setUp(listRoom[position])
         holder.click(listRoom[position])
         holder.longClick(listRoom[position])
+        holder.clickExitRoom(listRoom[position])
     }
 
     override fun getItemCount(): Int = listRoom.size
@@ -40,6 +42,11 @@ class ManagerRoomAdapter(var listRoom: MutableList<AddRoomModel>, var click: ICl
             binding.setVariable(BR.model, itemData)
             itemView.name_room.text = itemData.nameRoom
             itemView.status.text = itemData.status
+            if (itemData.status == "Đã Đặt") {
+                itemView.tv_tra.visibility = View.VISIBLE
+            } else {
+                itemView.tv_tra.visibility = View.GONE
+            }
         }
 
         fun click(addRoomModel: AddRoomModel) {
@@ -48,16 +55,24 @@ class ManagerRoomAdapter(var listRoom: MutableList<AddRoomModel>, var click: ICl
             }
 
         }
-        fun longClick(addRoomModel: AddRoomModel){
+
+        fun longClick(addRoomModel: AddRoomModel) {
             itemView.setOnLongClickListener {
                 click.longClick(addRoomModel)
-               return@setOnLongClickListener true
+                return@setOnLongClickListener true
+            }
+        }
+
+        fun clickExitRoom(addRoomModel: AddRoomModel) {
+            itemView.tv_tra.setOnClickListener {
+                click.clickExitRoom(addRoomModel)
             }
         }
     }
 }
 
 interface IClick {
+    fun clickExitRoom(addRoomModel: AddRoomModel)
     fun click(addRoomModel: AddRoomModel)
     fun longClick(addRoomModel: AddRoomModel)
 }

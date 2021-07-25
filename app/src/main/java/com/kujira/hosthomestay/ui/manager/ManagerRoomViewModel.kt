@@ -77,4 +77,20 @@ class ManagerRoomViewModel : BaseViewModel() {
                 }
             })
     }
+    fun cancelRoom(id: String) {
+        val dataRef = FirebaseDatabase.getInstance().getReference("Host")
+        dataRef.child("ListRoom").child(id).child("idClient").removeValue()
+        val query= dataRef.child("ListRoom")
+        query.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val hash = HashMap<String, Any>()
+                hash["status"] = "Còn Trống"
+                query.child(id).updateChildren(hash)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+    }
 }
