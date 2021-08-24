@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_4sdp"
-        android:text="Tình Trạng Đặt Phòng"
+        android:text="Tình Trạng Phòng"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/_14sdp"
         app:layout_constraintLeft_toLeftOf="parent"

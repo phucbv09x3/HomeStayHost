@@ -17,7 +17,7 @@ class LoginViewModel : BaseViewModel() {
     private var auth = FirebaseAuth.getInstance()
     val authFail = MutableLiveData<Int>()
 
-    fun login(view: View) {
+    fun click(view: View) {
         when (view.id) {
             R.id.btn_login -> {
                 checkSignIn()
