@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/development/HomeStayHost/app/src/main/res/drawable/custom_bg_dialog.xml" value="0.27708333333333335" />
+        <entry key="..\:/development/HomeStayHost/app/src/main/res/drawable/custom_bg_item_manager.xml" value="0.3536458333333333" />
+        <entry key="..\:/development/HomeStayHost/app/src/main/res/drawable/ic_baseline_local_phone_24.xml" value="0.3536458333333333" />
+        <entry key="..\:/development/HomeStayHost/app/src/main/res/layout/custom_rule.xml" value="0.3546875" />
+        <entry key="..\:/development/HomeStayHost/app/src/main/res/layout/fragment_my_account.xml" value="0.3546875" />
         <entry key="..\:/development/HomeStayHost/app/src/main/res/layout/item_manager.xml" value="0.17552083333333332" />
         <entry key="..\:/development/HomeStayHost/app/src/main/res/layout/login_fragment.xml" value="0.33697916666666666" />
+        <entry key="..\:/development/HomeStayHost/app/src/main/res/layout/register_fragment.xml" value="0.3375" />
       </map>
     </option>
   </component>

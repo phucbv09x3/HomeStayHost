@@ -53,6 +53,7 @@
             android:background="@drawable/custom_edt_login"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:hint=" Password"
+            android:inputType="textPassword"
             android:paddingStart="@dimen/_16sdp"
             android:text="@={viewModel.password}"
             app:layout_constraintLeft_toLeftOf="parent"

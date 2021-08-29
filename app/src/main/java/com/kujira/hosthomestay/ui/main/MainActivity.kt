@@ -53,6 +53,7 @@ open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
     override fun initData() {
         navController = navHostFragment.navController
         //setSupportActionBar(toolbar)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.colorWhite)
         navController.addOnDestinationChangedListener(this)
 //        NavigationUI.setupActionBarWithNavController(this, navController)
         listenerAction()

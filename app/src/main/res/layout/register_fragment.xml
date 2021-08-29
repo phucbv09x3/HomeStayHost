@@ -10,8 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:background="@color/colorWhite"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
 
         <TextView
             android:id="@+id/tv_below_title"
@@ -22,10 +22,9 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edt_userName"
@@ -37,8 +36,8 @@
             android:background="@drawable/custom_edt_login"
             android:drawableLeft="@drawable/ic_baseline_person_24"
             android:hint=" User name"
-            android:text="@={viewModel.userName}"
             android:paddingStart="@dimen/_16sdp"
+            android:text="@={viewModel.userName}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_below_title" />
@@ -53,8 +52,8 @@
             android:background="@drawable/custom_edt_login"
             android:drawableLeft="@drawable/ic_baseline_email_24"
             android:hint=" Email"
-            android:text="@={viewModel.email}"
             android:paddingStart="@dimen/_16sdp"
+            android:text="@={viewModel.email}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edt_userName" />
@@ -69,11 +68,13 @@
             android:background="@drawable/custom_edt_login"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:hint=" Password"
-            android:text="@={viewModel.password}"
+            android:inputType="textPassword"
             android:paddingStart="@dimen/_16sdp"
+            android:text="@={viewModel.password}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edt_email" />
+
         <EditText
             android:id="@+id/edt_number_phone"
             android:layout_width="match_parent"
@@ -82,10 +83,10 @@
             android:layout_marginTop="@dimen/_16sdp"
             android:layout_marginRight="@dimen/_16sdp"
             android:background="@drawable/custom_edt_login"
-            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:drawableLeft="@drawable/ic_baseline_local_phone_24"
             android:hint=" Phone"
-            android:text="@={viewModel.numberPhone}"
             android:paddingStart="@dimen/_16sdp"
+            android:text="@={viewModel.numberPhone}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edt_password" />
@@ -101,7 +102,7 @@
             android:onClick="@{(view)->viewModel.register(view)}"
             android:text="Register"
             android:textColor="#fff"
-            android:textSize="@dimen/_17sdp"
+            android:textSize="@dimen/_15sdp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edt_number_phone" />

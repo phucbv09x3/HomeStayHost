@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.databinding.FragmentMyAccountBinding
+
 import com.kujira.hosthomestay.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -27,42 +28,63 @@ class MyAccountFragment : BaseFragment<MyAccountViewModel, FragmentMyAccountBind
 
     override fun bindViewModel() {
         dataBinding.tvEdit.setOnClickListener {
-            val alertDialog = AlertDialog.Builder(context).create()
-            val dialogView = layoutInflater.inflate(R.layout.custom_change_acc, null)
-            alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            alertDialog.setView(dialogView)
-
-            val nameNew = dialogView.findViewById<EditText>(R.id.edt_new_name).text
-            val phoneNew = dialogView.findViewById<EditText>(R.id.edt_new_phone).text
-            dialogView.findViewById<Button>(R.id.btn_change_acc).setOnClickListener {
-                viewModel.changeAcc(nameNew.toString(), phoneNew.toString())
-                viewModel.listener.observe(this,{
-                    if (it == MyAccountViewModel.SUCCESS){
-                        alertDialog.dismiss()
-                        Toast.makeText(context,getString(R.string.success),Toast.LENGTH_LONG).show()
-                    }else{
-                        Toast.makeText(context,getString(R.string.error),Toast.LENGTH_LONG).show()
-                    }
-                })
-            }
-            alertDialog.show()
+            showDialogEdit()
         }
-
 
         dataBinding.tvLogout.setOnClickListener {
-            val alertDialog = android.app.AlertDialog.Builder(context).create()
-            alertDialog.setTitle("Đăng xuất")
-            alertDialog.setMessage("Bạn vẫn muốn đăng xuất!")
-            alertDialog.setButton(
-                AlertDialog.BUTTON_NEUTRAL, "OK"
-            ) { dialog, _ ->
-                viewModel.logOut()
-                replaceFragment(R.id.loginFragment)
-                alertDialog.dismiss()
-            }
-            alertDialog.show()
-
+            showDialogLogout()
         }
 
+        dataBinding.rule.setOnClickListener {
+            showDialogRule()
+        }
+
+    }
+
+    private fun showDialogEdit() {
+        val alertDialog = AlertDialog.Builder(context).create()
+        val dialogView = layoutInflater.inflate(R.layout.custom_change_acc, null)
+        alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        alertDialog.setView(dialogView)
+
+        val nameNew = dialogView.findViewById<EditText>(R.id.edt_new_name).text
+        val phoneNew = dialogView.findViewById<EditText>(R.id.edt_new_phone).text
+        dialogView.findViewById<Button>(R.id.btn_change_acc).setOnClickListener {
+            viewModel.changeAcc(nameNew.toString(), phoneNew.toString())
+            viewModel.listener.observe(this, {
+                if (it == MyAccountViewModel.SUCCESS) {
+                    alertDialog.dismiss()
+                    Toast.makeText(context, getString(R.string.success), Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(context, getString(R.string.error), Toast.LENGTH_LONG).show()
+                }
+            })
+        }
+        alertDialog.show()
+    }
+
+    private fun showDialogLogout() {
+        val alertDialog = android.app.AlertDialog.Builder(context).create()
+        alertDialog.setTitle("Đăng xuất")
+        alertDialog.setMessage("Bạn vẫn muốn đăng xuất!")
+        alertDialog.setButton(
+            AlertDialog.BUTTON_NEUTRAL, "OK"
+        ) { _, _ ->
+            viewModel.logOut()
+            replaceFragment(R.id.loginFragment)
+            alertDialog.dismiss()
+        }
+        alertDialog.show()
+    }
+
+    private fun showDialogRule() {
+        val alertDialog = AlertDialog.Builder(context).create()
+        val dialogView = layoutInflater.inflate(R.layout.custom_rule, null)
+        alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        alertDialog.setView(dialogView)
+        dialogView.findViewById<Button>(R.id.btn_showed).setOnClickListener {
+            alertDialog.dismiss()
+        }
+        alertDialog.show()
     }
 }

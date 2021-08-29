@@ -37,6 +37,7 @@ class LoginFragment : BaseFragment<LoginViewModel, LoginFragmentBinding>() {
         dataBinding.tvForgotPassword.setOnClickListener {
             forgotPassWord()
         }
+        viewModel.getListAcc()
     }
 
     private fun forgotPassWord() {
@@ -49,23 +50,22 @@ class LoginFragment : BaseFragment<LoginViewModel, LoginFragmentBinding>() {
         builder.setView(linearLayout)
         edtMail.hint = "Nhập email bạn cần khôi phục mật khẩu"
         builder.setPositiveButton("Gửi") { _: DialogInterface?, _: Int ->
-            val mAuth =
-                FirebaseAuth.getInstance().sendPasswordResetEmail(edtMail.text.toString().trim())
-                    .addOnCompleteListener { p0 ->
-                        if (p0.isSuccessful) {
-                            Toast.makeText(
-                                context,
-                                "Thành công ! Vui lòng kiểm tra mail và đặt lại mật khẩu",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        } else {
-                            Toast.makeText(
-                                context,
-                                "Send failed....",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }
+            FirebaseAuth.getInstance().sendPasswordResetEmail(edtMail.text.toString().trim())
+                .addOnCompleteListener { p0 ->
+                    if (p0.isSuccessful) {
+                        Toast.makeText(
+                            context,
+                            "Thành công ! Vui lòng kiểm tra mail và đặt lại mật khẩu",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            context,
+                            "Send failed....",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
+                }
         }
         builder.setNegativeButton("Không") { dialog: DialogInterface?, _: Int ->
             dialog!!.dismiss()
@@ -75,13 +75,21 @@ class LoginFragment : BaseFragment<LoginViewModel, LoginFragmentBinding>() {
     }
 
     override fun bindViewModel() {
-        viewModel.authFail.observe(this, {
+        viewModel.listenerData.observe(this, {
             when (it) {
+                LoginViewModel.VERIFY -> {
+                    replaceFragment(R.id.managerRoomFragment)
+                }
                 R.string.error_auth -> {
-                    Toast.makeText(context, getString(it), Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, getString(R.string.error_auth), Toast.LENGTH_LONG)
+                        .show()
+                }
+                R.string.error -> {
+                    Toast.makeText(context, getString(R.string.error), Toast.LENGTH_LONG).show()
                 }
                 1 -> {
-                    Toast.makeText(context, "isEmpty", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, getString(R.string.error_register), Toast.LENGTH_LONG)
+                        .show()
                 }
             }
         })
