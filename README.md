@@ -1,7 +1,6 @@
 Android Project Template
  - Đây là dự án base sử dụng Dagger2, Navigation Jetpack, Databinding, RxJava, MVVM design pattern...
- - Dự án này tích hợp sẵn Firebase Crashlytics để tracking crash app, khi clone app về thì mọi người thay
-  file google-services.json ứng với project của mọi người.
+ - Dự án này tích hợp sẵn Firebase Crashlytics để tracking crash app,
  - Source base này quản lý version của thư viện gradle trong file versionsManager.gradle. Bất cứ khi nào
   import thư viện vào thì nên tách phần version sang file versionsManager rồi trong gradle trỏ đến đó. Như vậy
   code sẽ rất clear và dễ quản lý.
