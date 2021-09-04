@@ -12,12 +12,9 @@ import com.kujira.hosthomestay.data.model.response.AddRoomModel
 import com.kujira.hosthomestay.data.model.response.ProvinceFB
 import com.kujira.hosthomestay.databinding.FragmentAddRoomBinding
 import com.kujira.hosthomestay.ui.base.BaseFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_host_main.*
 import kotlinx.android.synthetic.main.fragment_add_room.*
 import kotlinx.android.synthetic.main.fragment_my_account.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 
 class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>() {
@@ -130,12 +127,12 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
                     requestImage(222)
                 }
                 AddRoomViewModel.BTN_IMG_ACCESS -> {
-                    CoroutineScope(Dispatchers.Main).launch {
+                    Thread().run {
                         viewModel.putHomeStay(uriImg1!!, uriImg2!!)
                     }
                     pr.show()
-                    viewModel.listenerSuccess.observe(this,{
-                        if (it==1){
+                    viewModel.listenerSuccess.observe(this, { it2 ->
+                        if (it2 == 1) {
                             dataBinding.btnAccessAll.visibility = View.VISIBLE
                             pr.dismiss()
                         }
@@ -172,9 +169,10 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
                             price ?: "",
                             viewModel.auth.currentUser!!.uid
                         )
-                        CoroutineScope(Dispatchers.Main).launch {
+                        Thread().run {
                             viewModel.accAll(model)
                         }
+
 
                         viewModel.notifyPut.observe(this, {
                             if (it == 1) {

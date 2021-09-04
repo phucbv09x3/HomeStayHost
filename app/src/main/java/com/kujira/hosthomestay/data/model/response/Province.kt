@@ -55,3 +55,10 @@ data class AddRoomModel(
     var price: String,
     var uid : String
 )
+data class AccUser(
+    val uid : String,
+    val mail : String,
+    val phone : String,
+    val userName : String,
+    val permission : String,
+)

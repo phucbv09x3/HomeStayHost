@@ -14,7 +14,13 @@ object Constants {
     const val BASE_URL_PROVINCE = "https://provinces.open-api.vn"
     const val HOST = "Host"
     const val ACCOUNT = "Account"
+    const val CLIENT = "Client"
+    const val ADMIN = "Admin"
+    const val IntroductorySentence = "IntroductorySentence"
     const val DEVICE_ID = "device_id"
     const val MAIL = "mail"
+    const val UID = "uid"
+    const val PHONE = "phone"
+
 }
 

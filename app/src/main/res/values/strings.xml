@@ -8,6 +8,7 @@
     <string name="success">Thành Công</string>
     <string name="error">Thất Bại !</string>
     <string name="register_out">Thiết bị đã đăng kí 1 tài khoản trước đó !</string>
+    <string name="register_fail">Thất bại - Vui lòng thử lại !</string>
     <string name="not_exit_account">Tài khoản không tồn tại !</string>
     <string name="rule">1. Cung cấp đầy đủ thông tin và trung thực để dễ dàng thuận tiện cho viêc liên hệ và phản hồi
         \n 2. Vui lòng sử dụng dịch vụ đúng nghĩa vụ và không sử dụng vào mục đích không chính đáng
@@ -19,4 +20,8 @@
         \n 8.Chúng tôi sẽ gi lại đầy đủ thông tin cá nhân cũng như tình trạng pháp lý của bạn để quản lý
         \n 8.Với mong muốn xây dựng hệ sinh thái HomeStay tiêu chuẩn - chính xác dành cho việc booking. Mọi phản hồi của bạn đều
         được chúng tối lắng nge \nĐường dây nóng HomeStay hoạt động 24/24 : 1900-884-9053</string>
+    <string name="email_exist">Email đã được đăng kí!</string>
+    <string name="email_verify">Vui lòng vào email để xác thực !</string>
+    <string name="error_isEmpty">Vui lòng điền đầy đủ thông tin !</string>
+    <string name="introductory">Câu giới thiệu Admin của bạn không chính xác !</string>
 </resources>

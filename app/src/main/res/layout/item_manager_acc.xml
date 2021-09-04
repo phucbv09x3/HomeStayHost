@@ -15,12 +15,12 @@
         android:background="@drawable/custom_bg_item_manager">
 
         <TextView
-            android:id="@+id/name_room_title"
+            android:id="@+id/name_acc_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_4sdp"
-            android:text="Phòng"
+            android:text="Tên User"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold"
@@ -28,15 +28,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_remove_room"
+            android:id="@+id/btn_remove_acc"
             android:layout_width="@dimen/_14sdp"
             android:layout_height="@dimen/_14sdp"
             android:background="@drawable/ic_baseline_clear_24"
-            app:layout_constraintRight_toRightOf="@id/status"
-            app:layout_constraintTop_toTopOf="@id/name_room" />
+            app:layout_constraintRight_toRightOf="@id/show_email"
+            app:layout_constraintTop_toTopOf="@id/name_acc_user" />
 
         <TextView
-            android:id="@+id/name_room"
+            android:id="@+id/name_acc_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8sdp"
@@ -44,52 +44,36 @@
             android:text="Phong 101"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_14sdp"
-            app:layout_constraintLeft_toRightOf="@id/name_room_title"
+            app:layout_constraintLeft_toRightOf="@id/name_acc_title"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/title_status"
+            android:id="@+id/title_email_acc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_4sdp"
-            android:text="Tình Trạng Phòng"
+            android:text="Email User"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name_room" />
+            app:layout_constraintTop_toBottomOf="@id/name_acc_user" />
 
         <TextView
-            android:id="@+id/status"
-            android:layout_width="wrap_content"
+            android:id="@+id/show_email"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
             android:layout_marginRight="@dimen/_10sdp"
             android:padding="@dimen/_2sdp"
             android:text="Da dat"
+            android:layout_marginLeft="@dimen/_4sdp"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_14sdp"
-
+            app:layout_constraintLeft_toRightOf="@id/title_email_acc"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name_room" />
-
-
-        <TextView
-            android:id="@+id/tv_tra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_2sdp"
-            android:layout_marginBottom="@dimen/_2sdp"
-            android:background="@color/rdc"
-            android:padding="@dimen/_2sdp"
-            android:text="Xác nhận trả phòng ?"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/_12sdp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="@id/status"
-            app:layout_constraintTop_toBottomOf="@id/status" />
+            app:layout_constraintTop_toBottomOf="@id/name_acc_user" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

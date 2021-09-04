@@ -4,11 +4,8 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.*
 import androidx.datastore.preferences.preferencesDataStore
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
-import com.kujira.hosthomestay.ui.main.MainViewModel
-import com.kujira.hosthomestay.utils.printLog
 import javax.inject.Inject
 import javax.inject.Singleton
 

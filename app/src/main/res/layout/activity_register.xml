@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kujira.hosthomestay.ui.all_login.register_new.RegisterAccViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_login_new">
+
+        <TextView
+            android:id="@+id/tv_below_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_76sdp"
+            android:text="Chào mừng Admin mới 🎇 "
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edt_userName_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_edt_login"
+            android:hint="Nhập câu giới thiệu để thành Admin"
+            android:paddingStart="@dimen/_16sdp"
+            android:text="@={viewModel.questionIntroductory}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_below_title" />
+
+        <EditText
+            android:id="@+id/edt_email_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_edt_login"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:hint=" Email"
+            android:paddingStart="@dimen/_16sdp"
+            android:text="@={viewModel.emailRegister}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_userName_register" />
+
+        <EditText
+            android:id="@+id/edt_password_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_edt_login"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:hint=" Password"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/_16sdp"
+            android:text="@={viewModel.passwordRegister}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_email_register" />
+
+        <EditText
+            android:id="@+id/edt_number_phone_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_edt_login"
+            android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+            android:hint=" Phone"
+            android:paddingStart="@dimen/_16sdp"
+            android:text="@={viewModel.numberPhoneRegister}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_password_register" />
+
+        <Button
+            android:id="@+id/btn_register_admin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:background="@drawable/custom_btn_login"
+            android:onClick="@{(view)->viewModel.click(view)}"
+            android:text="Đăng ký trở thành Admin HomeStay"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_number_phone_register" />
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_register_client_new"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_38sdp"-->
+<!--            android:layout_marginStart="@dimen/_16sdp"-->
+<!--            android:layout_marginTop="@dimen/_10sdp"-->
+<!--            android:layout_marginRight="@dimen/_16sdp"-->
+<!--            android:background="@drawable/custom_btn_login"-->
+<!--            android:onClick="@{(view)->viewModel.click(view)}"-->
+<!--            android:text="Đăng ký thành khách hàng"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#fff"-->
+<!--            android:textSize="@dimen/_13sdp"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/btn_register_host_new" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

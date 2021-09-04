@@ -4,7 +4,7 @@ import android.view.View
 import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.databinding.FragmentMessageBinding
 import com.kujira.hosthomestay.ui.base.BaseFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_host_main.*
 
 
 class MessageFragment : BaseFragment<MessageViewModel, FragmentMessageBinding>() {

@@ -9,26 +9,22 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import com.google.firebase.FirebaseApp
 import com.kujira.hosthomestay.R
+import com.kujira.hosthomestay.databinding.ActivityHostMainBinding
 
-import com.kujira.hosthomestay.databinding.ActivityMainBinding
 import com.kujira.hosthomestay.ui.add.AddRoomFragment
 import com.kujira.hosthomestay.ui.base.BaseActivity
 import com.kujira.hosthomestay.ui.base.BaseFragment
-import com.kujira.hosthomestay.ui.manager.ManagerRoomFragment
-import com.kujira.hosthomestay.ui.mess.MessageFragment
+import com.kujira.hosthomestay.ui.manager.ManagerAccFragment
 import com.kujira.hosthomestay.ui.myacc.MyAccountFragment
 import com.kujira.hosthomestay.utils.printLog
-import java.security.AccessController.getContext
 
-open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
+open class MainHostActivity : BaseActivity<MainHostViewModel, ActivityHostMainBinding>(),
     NavController.OnDestinationChangedListener {
     private lateinit var navController: NavController
 
     private lateinit var currentFragment: BaseFragment<*, *>
-    private var currentFragmentId: Int = R.id.loginFragment
+    private var currentFragmentId: Int = R.id.managerRoomFragment
     private val navHostFragment: NavHostFragment by lazy {
         supportFragmentManager.findFragmentById(R.id.main_nav_fragment) as NavHostFragment
     }
@@ -38,12 +34,12 @@ open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
         return false
     }
 
-    override fun createViewModel(): Class<MainViewModel> {
-        return MainViewModel::class.java
+    override fun createViewModel(): Class<MainHostViewModel> {
+        return MainHostViewModel::class.java
     }
 
     override fun getContentView(): Int {
-        return R.layout.activity_main
+        return R.layout.activity_host_main
     }
 
     override fun initAction() {
@@ -110,8 +106,8 @@ open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
 //                    }
 //
 //                }
-                MainViewModel.BTN_MANAGER_ROOM -> {
-                    if (currentFragment is ManagerRoomFragment) {
+                MainHostViewModel.BTN_MANAGER_ROOM -> {
+                    if (currentFragment is ManagerAccFragment) {
 
                     } else {
                         navigate(R.id.managerRoomFragment)
@@ -119,7 +115,7 @@ open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
 
                 }
 
-                MainViewModel.BTN_ADD_ROOM -> {
+                MainHostViewModel.BTN_ADD_ROOM -> {
                     if (currentFragment is AddRoomFragment) {
 
                     } else {
@@ -127,7 +123,7 @@ open class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
                     }
 
                 }
-                MainViewModel.BTN_MY_ACC -> {
+                MainHostViewModel.BTN_MY_ACC -> {
                     if (currentFragment is MyAccountFragment) {
 
                     } else {

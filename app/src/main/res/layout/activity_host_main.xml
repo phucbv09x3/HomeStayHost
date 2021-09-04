@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.kujira.hosthomestay.ui.main.MainViewModel" />
+            type="com.kujira.hosthomestay.ui.main.MainHostViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/colorWhite"
-        tools:context=".ui.main.MainActivity">
+        tools:context=".ui.main.MainHostActivity">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/main_nav_fragment"
@@ -60,7 +60,7 @@
                 android:drawableTop="@drawable/ic_baseline_calendar_today_24"
                 android:onClick="@{(view)->viewModel.click(view)}"
                 android:padding="@dimen/_4sdp"
-                android:text="Quản lí"
+                android:text="Tài khoản"
                 android:textColor="@color/colorBlack"
                 android:textAllCaps="false"
                 android:textSize="@dimen/_10sdp" />

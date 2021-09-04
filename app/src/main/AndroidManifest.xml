@@ -18,12 +18,22 @@
         android:theme="@style/AppTheme">
         <activity
             android:screenOrientation="portrait"
-            android:name="com.kujira.hosthomestay.ui.main.MainActivity">
+            android:name="com.kujira.hosthomestay.ui.main.MainHostActivity">
+
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name="com.kujira.hosthomestay.ui.all_login.login_new.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name="com.kujira.hosthomestay.ui.all_login.register_new.RegisterActivity">
+
         </activity>
     </application>
 

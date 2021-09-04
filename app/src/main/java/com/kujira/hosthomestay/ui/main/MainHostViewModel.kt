@@ -8,7 +8,7 @@ import com.kujira.hosthomestay.ui.base.BaseViewModel
 /**
  * Created by OpenYourEyes on 10/24/2020
  */
-class MainViewModel : BaseViewModel() {
+class MainHostViewModel : BaseViewModel() {
     companion object {
         const val BTN_MESSAGE = 0
         const val BTN_MANAGER_ROOM = 1
