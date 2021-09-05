@@ -39,11 +39,6 @@ class ManagerRoomAdapter(var listRoom: MutableList<AccUser>, var click: IClick) 
             itemView.name_acc_user.text = itemData.userName
             itemView.show_email.text = itemData.mail
             itemView.show_phone.text = itemData.phone
-            if (itemData.permission == "2") {
-                itemView.show_report.visibility = View.VISIBLE
-            } else {
-                itemView.unLock.visibility = View.VISIBLE
-            }
         }
 
         fun clickShow(accUser: AccUser) {

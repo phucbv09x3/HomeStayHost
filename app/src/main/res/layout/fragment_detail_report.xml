@@ -54,7 +54,7 @@
             android:layout_marginBottom="@dimen/_2sdp"
             android:background="@drawable/custom_bg_login"
             android:padding="@dimen/_3sdp"
-            android:text="Reset Report"
+            android:text="Mở khóa"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintBottom_toBottomOf="parent"

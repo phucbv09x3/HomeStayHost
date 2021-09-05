@@ -80,10 +80,10 @@
 
         <TextView
             android:id="@+id/show_report"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
             android:background="@drawable/custom_next_black"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -115,18 +115,5 @@
             app:layout_constraintLeft_toRightOf="@id/title_phone"
             app:layout_constraintTop_toTopOf="@id/title_phone" />
 
-        <TextView
-            android:id="@+id/unLock"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:background="@drawable/ic_baseline_lock_open_24"
-            android:textColor="@color/colorBlack"
-            android:textStyle="bold"
-            android:visibility="gone"
-            android:layout_marginBottom="@dimen/_2sdp"
-            android:layout_marginRight="@dimen/_8sdp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
