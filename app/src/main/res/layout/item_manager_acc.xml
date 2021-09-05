@@ -10,9 +10,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_4sdp"
         android:layout_margin="@dimen/_4sdp"
-        android:background="@drawable/custom_bg_item_manager">
+        android:layout_marginTop="@dimen/_4sdp"
+        android:background="@drawable/custom_edt_comment">
 
         <TextView
             android:id="@+id/name_acc_title"
@@ -27,13 +27,13 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--        <Button-->
-        <!--            android:id="@+id/btn_remove_acc"-->
-        <!--            android:layout_width="@dimen/_14sdp"-->
-        <!--            android:layout_height="@dimen/_14sdp"-->
-        <!--            android:background="@drawable/ic_baseline_clear_24"-->
-        <!--            app:layout_constraintRight_toRightOf="@id/show_email"-->
-        <!--            app:layout_constraintTop_toTopOf="@id/name_acc_user" />-->
+        <Button
+            android:id="@+id/btn_block_acc"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/ic_baseline_clear_24"
+            app:layout_constraintRight_toRightOf="@id/show_email"
+            app:layout_constraintTop_toTopOf="@id/name_acc_user" />
 
         <TextView
             android:id="@+id/name_acc_user"
@@ -53,10 +53,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_4sdp"
+            android:padding="@dimen/_2sdp"
             android:text="Email "
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/show_email"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name_acc_user" />
 
@@ -64,30 +66,67 @@
             android:id="@+id/show_email"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4sdp"
             android:layout_marginTop="@dimen/_4sdp"
             android:layout_marginRight="@dimen/_10sdp"
             android:padding="@dimen/_2sdp"
             android:text="Da dat"
-            android:layout_marginLeft="@dimen/_4sdp"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintLeft_toRightOf="@id/title_email_acc"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name_acc_user" />
 
+
         <TextView
-            android:layout_margin="@dimen/_4sdp"
-            android:textStyle="bold"
-            android:textColor="@color/colorBlack"
             android:id="@+id/show_report"
-            android:text="Show report"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/custom_next_black"
             android:visibility="gone"
-            android:padding="@dimen/_2sdp"
-            android:background="@drawable/custom_bg_login"
-            android:textSize="@dimen/_12sdp"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_phone"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:padding="@dimen/_2sdp"
+            android:text="Phone"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/title_email_acc"
+            app:layout_constraintTop_toBottomOf="@id/title_email_acc" />
+
+        <TextView
+            android:id="@+id/show_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:padding="@dimen/_2sdp"
+            android:text="Phone"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintLeft_toRightOf="@id/title_phone"
+            app:layout_constraintTop_toTopOf="@id/title_phone" />
+
+        <TextView
+            android:id="@+id/unLock"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/ic_baseline_lock_open_24"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

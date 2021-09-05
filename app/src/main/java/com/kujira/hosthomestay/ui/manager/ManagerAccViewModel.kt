@@ -45,9 +45,47 @@ class ManagerAccViewModel : BaseViewModel() {
         })
     }
 
-    fun removeRoom(addRoomModel: AddRoomModel) {
-        dataReferences.child(addRoomModel.id).removeValue()
+    fun blockAcc(uid : String){
+        showLoading.onNext(true)
+        dataReferences.child("Report")
+        val hashMap = HashMap<String, String>()
+        hashMap["idHost"] = auth.currentUser?.uid.toString()
+        hashMap["idClient"] = uid
+        hashMap["contentReport"] = "AdminBlock"
+        dataReferences.child("Report").child("ReportHost")
+            .child(uid).setValue(hashMap)
+            .addOnSuccessListener {
+                listener.value = 1
+                showLoading.onNext(false)
+            }
+            .addOnFailureListener {
+                listener.value = 2
+            }
     }
+    fun blockAccClient(uid : String){
+        showLoading.onNext(true)
+        dataReferences.child("Report")
+        val hashMap = HashMap<String, String>()
+        hashMap["idHost"] = auth.currentUser?.uid.toString()
+        hashMap["idClient"] = uid
+        hashMap["contentReport"] = "AdminBlock"
+        for (i in 0..10){
+            dataReferences.child("Report").child("ReportClient")
+                .child(uid).child(System.currentTimeMillis().toString()).setValue(hashMap)
+                .addOnSuccessListener {
+                    listener.value = 1
+                    showLoading.onNext(false)
+                }
+                .addOnFailureListener {
+                    listener.value = 2
+                }
+        }
+
+    }
+
+//    fun removeRoom(addRoomModel: AddRoomModel) {
+//        dataReferences.child(addRoomModel.id).removeValue()
+//    }
 
     var listener = MutableLiveData<Int>()
     fun editRoom(addRoomModel: AddRoomModel) {

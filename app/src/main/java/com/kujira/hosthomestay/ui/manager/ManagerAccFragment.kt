@@ -1,5 +1,6 @@
 package com.kujira.hosthomestay.ui.manager
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,7 +45,26 @@ class ManagerAccFragment : BaseFragment<ManagerAccViewModel, FragmentManagerAccB
         bundle.putParcelable("bundle",acc)
         navigators.navigate(R.id.detailReportFragment,bundle)
     }
-//    override fun click(addRoomModel: AddRoomModel) {
+
+    override fun clickBlockAcc(accUser: AccUser) {
+        val alertDialog = android.app.AlertDialog.Builder(context).create()
+        alertDialog.setTitle("Block User")
+        alertDialog.setMessage("Khóa tạm thời tài khoản này !")
+        alertDialog.setButton(
+            AlertDialog.BUTTON_NEUTRAL, "OK"
+        ) { dialog, _ ->
+            if (accUser.permission == "1"){
+                viewModel.blockAcc(accUser.uid)
+                dialog.dismiss()
+            }else{
+                viewModel.blockAccClient(accUser.uid)
+                dialog.dismiss()
+            }
+
+        }
+        alertDialog.show()
+    }
+    //    override fun click(addRoomModel: AddRoomModel) {
 //        val alertDialog = android.app.AlertDialog.Builder(context).create()
 //        alertDialog.setTitle("Xóa Phòng")
 //        alertDialog.setMessage("Bạn xác nhận xóa phòng này!")

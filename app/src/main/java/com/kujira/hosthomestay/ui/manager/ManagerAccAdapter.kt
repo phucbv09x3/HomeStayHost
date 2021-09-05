@@ -4,10 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
-import androidx.databinding.library.baseAdapters.BR
 import androidx.recyclerview.widget.RecyclerView
 import com.kujira.hosthomestay.data.model.response.AccUser
-import com.kujira.hosthomestay.data.model.response.AddRoomModel
 import com.kujira.hosthomestay.databinding.ItemManagerAccBinding
 import kotlinx.android.synthetic.main.item_manager_acc.view.*
 
@@ -30,9 +28,7 @@ class ManagerRoomAdapter(var listRoom: MutableList<AccUser>, var click: IClick) 
     override fun onBindViewHolder(holder: ManagerRoomAdapter.ManagerHolder, position: Int) {
         holder.setUp(listRoom[position])
         holder.clickShow(listRoom[position])
-//        holder.click(listRoom[position])
-//        holder.longClick(listRoom[position])
-//        holder.clickExitRoom(listRoom[position])
+        holder.clickBlockAcc(listRoom[position])
     }
 
     override fun getItemCount(): Int = listRoom.size
@@ -42,8 +38,11 @@ class ManagerRoomAdapter(var listRoom: MutableList<AccUser>, var click: IClick) 
         fun setUp(itemData: AccUser) {
             itemView.name_acc_user.text = itemData.userName
             itemView.show_email.text = itemData.mail
+            itemView.show_phone.text = itemData.phone
             if (itemData.permission == "2") {
                 itemView.show_report.visibility = View.VISIBLE
+            } else {
+                itemView.unLock.visibility = View.VISIBLE
             }
         }
 
@@ -52,31 +51,16 @@ class ManagerRoomAdapter(var listRoom: MutableList<AccUser>, var click: IClick) 
                 click.clickShowReport(accUser)
             }
         }
-//        fun click(addRoomModel: AddRoomModel) {
-//            itemView.btn_remove_room.setOnClickListener {
-//                click.click(addRoomModel)
-//            }
-//
-//        }
-//
-//        fun longClick(addRoomModel: AddRoomModel) {
-//            itemView.setOnLongClickListener {
-//                click.longClick(addRoomModel)
-//                return@setOnLongClickListener true
-//            }
-//        }
-//
-//        fun clickExitRoom(addRoomModel: AddRoomModel) {
-//            itemView.tv_tra.setOnClickListener {
-//                click.clickExitRoom(addRoomModel)
-//            }
-//        }
+
+        fun clickBlockAcc(accUser: AccUser) {
+            itemView.btn_block_acc.setOnClickListener {
+                click.clickBlockAcc(accUser)
+            }
+        }
     }
 }
 
 interface IClick {
     fun clickShowReport(accUser: AccUser)
-//    fun clickExitRoom(addRoomModel: AddRoomModel)
-//    fun click(addRoomModel: AddRoomModel)
-//    fun longClick(addRoomModel: AddRoomModel)
+    fun clickBlockAcc(accUser: AccUser)
 }

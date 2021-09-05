@@ -10,10 +10,11 @@ import kotlinx.android.synthetic.main.item_report.view.*
 class DetailReportAdapter(var listReport: MutableList<ReportModel>) :
     RecyclerView.Adapter<DetailReportAdapter.DetailReportHolder>() {
 
-    fun setList(mutableList: MutableList<ReportModel>){
+    fun setList(mutableList: MutableList<ReportModel>) {
         listReport = mutableList
         notifyDataSetChanged()
     }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -38,8 +39,10 @@ class DetailReportAdapter(var listReport: MutableList<ReportModel>) :
             itemView.tv_IdHost.text = itemData.idHost
             itemView.tv_detail_comment.text = itemData.contentReport
         }
+
     }
 }
+
 
 data class ReportModel(
     val idHost: String,
