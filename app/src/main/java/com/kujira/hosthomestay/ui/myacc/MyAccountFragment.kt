@@ -71,7 +71,7 @@ class MyAccountFragment : BaseFragment<MyAccountViewModel, FragmentMyAccountBind
             AlertDialog.BUTTON_NEUTRAL, "OK"
         ) { _, _ ->
             viewModel.logOut()
-            replaceFragment(R.id.loginFragment)
+            //replaceFragment(R.id.loginFragment)
             alertDialog.dismiss()
         }
         alertDialog.show()

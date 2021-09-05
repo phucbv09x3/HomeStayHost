@@ -1,6 +1,8 @@
 package com.kujira.hosthomestay.data.model.response
 
 import android.net.Uri
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
 
 data class ProvinceItem(
@@ -55,10 +57,14 @@ data class AddRoomModel(
     var price: String,
     var uid : String
 )
+
+@Parcelize
 data class AccUser(
     val uid : String,
     val mail : String,
     val phone : String,
     val userName : String,
     val permission : String,
-)
+) : Parcelable {
+
+}

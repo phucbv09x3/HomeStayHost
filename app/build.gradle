@@ -69,7 +69,7 @@ android {
 
             def date = new Date()
             def formattedDate = date.format('yyMMdd_HHmm')
-            def appName = "HomeStayHost${flavor}${buildType}_v${versionName}(${versionCode})_${formattedDate}.apk"
+            def appName = "AdminHomeStay${flavor}${buildType}_v${versionName}(${versionCode})_${formattedDate}.apk"
             outputFileName = appName
         }
     }

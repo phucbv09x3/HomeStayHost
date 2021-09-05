@@ -1,27 +1,22 @@
 package com.kujira.hosthomestay.ui.manager
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
+import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kujira.hosthomestay.R
-import com.kujira.hosthomestay.data.model.response.AddRoomModel
-import com.kujira.hosthomestay.databinding.FragmentMessageBinding
+import com.kujira.hosthomestay.data.model.response.AccUser
+import com.kujira.hosthomestay.databinding.FragmentManagerAccBinding
 import com.kujira.hosthomestay.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.activity_host_main.*
-import kotlinx.android.synthetic.main.fragment_manager_room.*
+import kotlinx.android.synthetic.main.fragment_manager_acc.*
 
 
-class ManagerAccFragment : BaseFragment<ManagerAccViewModel, FragmentMessageBinding>(), IClick {
+class ManagerAccFragment : BaseFragment<ManagerAccViewModel, FragmentManagerAccBinding>(), IClick {
     override fun createViewModel(): Class<ManagerAccViewModel> {
         return ManagerAccViewModel::class.java
     }
 
-    override fun getResourceLayout(): Int = R.layout.fragment_manager_room
+    override fun getResourceLayout(): Int = R.layout.fragment_manager_acc
 
     override fun initView() {
         activity.btn_managerRoom_on_main.setTextColor(context.getColor(R.color.rdc))
@@ -44,6 +39,11 @@ class ManagerAccFragment : BaseFragment<ManagerAccViewModel, FragmentMessageBind
 
     }
 
+    override fun clickShowReport(acc: AccUser) {
+        val bundle = Bundle()
+        bundle.putParcelable("bundle",acc)
+        navigators.navigate(R.id.detailReportFragment,bundle)
+    }
 //    override fun click(addRoomModel: AddRoomModel) {
 //        val alertDialog = android.app.AlertDialog.Builder(context).create()
 //        alertDialog.setTitle("Xóa Phòng")

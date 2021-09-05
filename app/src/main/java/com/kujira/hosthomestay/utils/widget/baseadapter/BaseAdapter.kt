@@ -79,7 +79,7 @@ open class BaseViewHolder<M>(
         rootView.root.setOnClickListener {
             onItemClick?.invoke(model, rootView.root)
         }
-        rootView.setVariable(BR.model, model)
+      //  rootView.setVariable(BR.model, model)
         rootView.executePendingBindings()
     }
 }

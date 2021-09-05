@@ -4,26 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/managerRoomFragment">
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.kujira.hosthomestay.ui.login.LoginFragment"
-        android:label="Login Screen" />
-
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.kujira.hosthomestay.ui.register.RegisterFragment"
-        android:label="Register Screen" />
-
-    <fragment
-        android:id="@+id/listFragment"
-        android:name="com.kujira.hosthomestay.ui.list.ListFragment"
-        android:label="List Screen"
-        tools:layout="@layout/list_fragment">
-
-        <action
-            android:id="@+id/navToItemDetailFragment"
-            app:destination="@id/aboutFragment" />
-    </fragment>
 
     <fragment
         android:id="@+id/aboutFragment"
@@ -33,8 +13,8 @@
         android:id="@+id/addRoomFragment"
         android:name="com.kujira.hosthomestay.ui.add.AddRoomFragment" />
     <fragment
-        android:id="@+id/messageFragment"
-        android:name="com.kujira.hosthomestay.ui.mess.MessageFragment" />
+        android:id="@+id/detailReportFragment"
+        android:name="com.kujira.hosthomestay.ui.detail_report.DetailReportFragment" />
     <fragment
         android:id="@+id/managerRoomFragment"
         android:name="com.kujira.hosthomestay.ui.manager.ManagerAccFragment" />

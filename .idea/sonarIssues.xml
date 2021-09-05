@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/data/AppDataManager.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/data/local/DataStoreHelper.kt">
           <value>
             <set />
@@ -74,6 +79,26 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/listRoom/ListRoomFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/listRoom/ListRoomViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/main/MainViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/travelAll/TravelAllFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/travelAll/TravelAllViewModel.kt">
           <value>
             <set />
           </value>
@@ -153,6 +178,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/host/report/ReportViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/map/MapActivity.kt">
           <value>
             <set />
@@ -179,6 +209,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/res/layout/custom_dilog_edit.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/res/layout/custom_exit_or_report.xml">
           <value>
             <set />
           </value>
@@ -223,6 +258,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <value>
             <set />
@@ -234,6 +274,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/di/buidler/ActivityBuilder.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/di/buidler/AuthFragmentProvider.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/di/buidler/MainFragmentProvider.kt">
           <value>
             <set />
           </value>
@@ -263,7 +313,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/ui/base/BaseFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/ui/base/ViewModelFactory.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/ui/detail_report/DetailReportAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/ui/detail_report/DetailReportFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/ui/detail_report/DetailReportViewModel.kt">
           <value>
             <set />
           </value>
@@ -333,12 +403,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/utils/widget/baseadapter/BaseAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/drawable/custom_bg_dialog.xml">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/drawable/custom_next_white.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml">
           <value>
             <set />
           </value>
@@ -368,7 +448,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_report.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_manager_room.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_message.xml">
           <value>
             <set />
           </value>
@@ -388,12 +478,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/item_report.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/login_fragment.xml">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/register_fragment.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/view_repo_list_item.xml">
           <value>
             <set />
           </value>

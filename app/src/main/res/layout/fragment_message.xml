@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-        <variable
-            name="viewModel"
-            type="com.kujira.hosthomestay.ui.mess.MessageViewModel" />
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="com.kujira.hosthomestay.ui.mess.MessageViewModel" />-->
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,7 +16,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
