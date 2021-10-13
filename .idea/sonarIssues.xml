@@ -8,6 +8,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../Photoruction/Photoruction_Android/app/src/main/java/com/concore/gs/photoruction_android/plan_detail_item/actions/AddNewSheetRunnable.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Photoruction/Photoruction_Android/app/src/main/java/com/concore/gs/photoruction_android/view/activity/PlanDetailActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/AndroidManifest.xml">
           <value>
             <set />
@@ -63,6 +73,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/BlockActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/account/AccountFragment.kt">
           <value>
             <set />
@@ -88,7 +103,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/main/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/main/MainViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/map/MapActivity.kt">
           <value>
             <set />
           </value>
@@ -393,6 +418,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/ui/myacc/MyAccountViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/ui/register/RegisterFragment.kt">
           <value>
             <set />
@@ -469,6 +499,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_report.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_manager_acc.xml">
           <value>
             <set />
           </value>

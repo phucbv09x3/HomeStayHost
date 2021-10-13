@@ -42,7 +42,7 @@ class ManagerRoomAdapter(var listRoom: MutableList<AccUser>, var click: IClick) 
         }
 
         fun clickShow(accUser: AccUser) {
-            itemView.show_report.setOnClickListener {
+            itemView.setOnClickListener {
                 click.clickShowReport(accUser)
             }
         }

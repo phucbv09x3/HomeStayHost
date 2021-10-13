@@ -36,8 +36,9 @@ class DetailReportViewModel : BaseViewModel() {
 
     fun resetReportAccClient(uid: String) {
         showLoading.onNext(true)
+        val dataRefer = FirebaseDatabase.getInstance().getReference(Constants.CLIENT)
         printLog(" resetReportAccClient: ${uid}")
-        dataRef.child("Report").child(uid).removeValue()
+        dataRefer.child("Report").child("ReportClient").child(uid).removeValue()
             .addOnSuccessListener {
                 showLoading.onNext(false)
                 navigation.navigateUp()

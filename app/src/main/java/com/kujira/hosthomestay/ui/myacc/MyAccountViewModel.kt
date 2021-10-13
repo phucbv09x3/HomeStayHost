@@ -24,7 +24,8 @@ class MyAccountViewModel : BaseViewModel() {
 
     fun updateUI() {
 
-        dataReference.child("Account").child(auth.currentUser!!.uid)
+        val dataRef = FirebaseDatabase.getInstance().getReference("Admin")
+        dataRef.child("Account").child(auth.currentUser!!.uid)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val name = snapshot.child("userName").value.toString()

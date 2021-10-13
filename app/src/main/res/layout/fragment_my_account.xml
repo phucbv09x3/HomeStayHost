@@ -24,17 +24,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/name_acc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_18sdp"
-            android:text="@={viewModel.myName}"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/_16sdp"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toRightOf="@id/circle_my_acc"
-            app:layout_constraintTop_toTopOf="@id/circle_my_acc" />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,9 +34,11 @@
             android:text="@={viewModel.myMail}"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/circle_my_acc"
+            app:layout_constraintTop_toTopOf="@id/circle_my_acc"
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/circle_my_acc"
-            app:layout_constraintTop_toBottomOf="@id/name_acc" />
+             />
 
         <TextView
             android:id="@+id/phone"
