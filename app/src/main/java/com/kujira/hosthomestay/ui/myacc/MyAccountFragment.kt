@@ -1,5 +1,6 @@
 package com.kujira.hosthomestay.ui.myacc
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.widget.Button
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.databinding.FragmentMyAccountBinding
+import com.kujira.hosthomestay.ui.all_login.login_new.LoginActivity
 
 import com.kujira.hosthomestay.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.activity_host_main.*
@@ -76,7 +78,7 @@ class MyAccountFragment : BaseFragment<MyAccountViewModel, FragmentMyAccountBind
             AlertDialog.BUTTON_NEUTRAL, "OK"
         ) { _, _ ->
             viewModel.logOut()
-            //replaceFragment(R.id.loginFragment)
+            context.startActivity(Intent(context, LoginActivity::class.java))
             alertDialog.dismiss()
         }
         alertDialog.show()

@@ -110,7 +110,7 @@ open class MainHostActivity : BaseActivity<MainHostViewModel, ActivityHostMainBi
                     if (currentFragment is ManagerAccFragment) {
 
                     } else {
-                        navigate(R.id.managerRoomFragment)
+                        navigate(R.id.managerRoomFragment,null, false)
                     }
 
                 }
@@ -119,7 +119,7 @@ open class MainHostActivity : BaseActivity<MainHostViewModel, ActivityHostMainBi
                     if (currentFragment is AddRoomFragment) {
 
                     } else {
-                        navigate(R.id.addRoomFragment)
+                        navigate(R.id.addRoomFragment,null, false)
                     }
 
                 }
@@ -127,7 +127,7 @@ open class MainHostActivity : BaseActivity<MainHostViewModel, ActivityHostMainBi
                     if (currentFragment is MyAccountFragment) {
 
                     } else {
-                        navigate(R.id.myAccountFragment)
+                        navigate(R.id.myAccountFragment,null, false)
                     }
 
                 }

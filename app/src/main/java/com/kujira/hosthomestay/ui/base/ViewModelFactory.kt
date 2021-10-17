@@ -12,6 +12,7 @@ import com.kujira.hosthomestay.ui.detail_report.DetailReportViewModel
 import com.kujira.hosthomestay.ui.main.MainHostViewModel
 import com.kujira.hosthomestay.ui.manager.ManagerAccViewModel
 import com.kujira.hosthomestay.ui.myacc.MyAccountViewModel
+import com.kujira.hosthomestay.ui.splash.SplashViewModel
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -32,6 +33,7 @@ class ViewModelFactory @Inject constructor(
             modelClass.isAssignableFrom(LoginAccViewModel::class.java) -> LoginAccViewModel() as T
             modelClass.isAssignableFrom(RegisterAccViewModel::class.java) -> RegisterAccViewModel() as T
             modelClass.isAssignableFrom(DetailReportViewModel::class.java) -> DetailReportViewModel() as T
+            modelClass.isAssignableFrom(SplashViewModel::class.java) -> SplashViewModel() as T
 
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

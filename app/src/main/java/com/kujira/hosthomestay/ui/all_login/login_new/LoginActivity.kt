@@ -31,17 +31,7 @@ class LoginActivity : BaseActivity<LoginAccViewModel, ActivityLoginBinding>() {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        mViewModel.autoLogin()
-        mViewModel.autoLogin.observe(this,{
-            if (it==1){
-                startActivity(Intent(this,MainHostActivity::class.java))
-            }else{
 
-            }
-        })
-    }
     override fun initData() {
         window.statusBarColor = ContextCompat.getColor(this, R.color.bg_login_new)
         listener()
@@ -77,6 +67,7 @@ class LoginActivity : BaseActivity<LoginAccViewModel, ActivityLoginBinding>() {
             if (it == LoginAccViewModel.SUCCESS) {
                 val intent = Intent(this, MainHostActivity::class.java)
                 startActivity(intent)
+                finish()
             } else {
                 Toast.makeText(this, getString(it), Toast.LENGTH_LONG).show()
             }

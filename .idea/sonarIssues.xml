@@ -73,6 +73,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/all_login/register_new/RegisterAccViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/base/BaseViewModel.kt">
           <value>
             <set />
@@ -229,6 +234,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/map/MapActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/splash/SplashViewModel.kt">
           <value>
             <set />
           </value>
@@ -473,6 +483,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/ui/splash/SplashActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/ui/splash/SplashViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/utils/Constants.kt">
           <value>
             <set />
@@ -529,6 +549,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
           <value>
             <set />
           </value>
