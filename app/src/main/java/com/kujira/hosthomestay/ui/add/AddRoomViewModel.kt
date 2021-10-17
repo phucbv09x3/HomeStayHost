@@ -1,7 +1,6 @@
 package com.kujira.hosthomestay.ui.add
 
 import android.net.Uri
-import android.util.Log
 import android.view.View
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
@@ -34,6 +33,7 @@ class AddRoomViewModel : BaseViewModel() {
     var listenerSuccess = MutableLiveData<Int>()
     var notifyPut = MutableLiveData<Int>()
     var linkImg1 = ""
+
     companion object {
         const val BTN_IMG_1 = 0
         const val BTN_IMG_ACCESS = 2
@@ -115,30 +115,24 @@ class AddRoomViewModel : BaseViewModel() {
                 }
             }
     }
+
     val dataRefer =
-        FirebaseDatabase.getInstance().getReference(Constants.CLIENT).child("TravelList")
+        FirebaseDatabase.getInstance().getReference(Constants.CLIENT)
+
     fun addTravel(address: String) {
         showLoading.onNext(true)
-        dataRefer.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val hashMap = HashMap<String, String>()
-                hashMap["address"] = address
-                hashMap["detail"] = introduce.get().toString()
-                hashMap["id"] = "key"
-                hashMap["img"] = linkImg1
-                dataRefer.child(auth.currentUser?.uid!!).setValue(hashMap)
-                    .addOnSuccessListener {
-                        showLoading.onNext(false)
-                    }.addOnFailureListener {
-                        showLoading.onNext(false)
-                    }
-            }
+        val hashMap = HashMap<String, String>()
+        hashMap["address"] = address
+        hashMap["detail"] = introduce.get().toString()
+        hashMap["id"] = "key"
+        hashMap["img"] = linkImg1
 
-            override fun onCancelled(error: DatabaseError) {
+        dataRefer.child("TravelList").child(System.currentTimeMillis().toString()).setValue(hashMap)
+            .addOnSuccessListener {
                 showLoading.onNext(false)
-
+            }.addOnFailureListener {
+                showLoading.onNext(false)
             }
-        })
     }
 }
 
