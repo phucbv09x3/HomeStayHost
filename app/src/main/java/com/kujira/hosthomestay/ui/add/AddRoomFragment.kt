@@ -112,76 +112,47 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
             }
 
         actionListener()
-        spinnerTypeRoom()
+
 
     }
 
     private fun actionListener() {
         val pr = ProgressDialog(context)
-        viewModel.listenerBtnAddHome.observe(this, {
+        viewModel.listenerBtnAddHome.observe(this, { it ->
             when (it) {
                 AddRoomViewModel.BTN_IMG_1 -> {
                     requestImage(111)
                 }
-                AddRoomViewModel.BTN_IMG_2 -> {
-                    requestImage(222)
-                }
                 AddRoomViewModel.BTN_IMG_ACCESS -> {
-                    Thread().run {
-                        viewModel.putHomeStay(uriImg1!!, uriImg2!!)
-                    }
+                    viewModel.putTravel(uriImg1!!)
                     pr.show()
                     viewModel.listenerSuccess.observe(this, { it2 ->
                         if (it2 == 1) {
                             dataBinding.btnAccessAll.visibility = View.VISIBLE
-                            pr.dismiss()
                         }
+                        pr.dismiss()
                     })
 
                 }
                 AddRoomViewModel.BTN_IMG_ACCESS_ALL -> {
-                    val wardAddress = viewModel.textWard.get()
-                    val nameRoom = viewModel.nameRoom.get()
-                    val sRoom = viewModel.sRoom.get()
-                    val numberSleepRoom = viewModel.numberSleepRoom.get()
                     val introduce = viewModel.introduce.get()
-                    val textDetail = viewModel.textDetailGT.get()
-                    val price = viewModel.price.get()
-                    if (wardAddress?.isNotEmpty() == true && nameRoom?.isNotEmpty() == true
-                        && sRoom?.isNotEmpty() == true && numberSleepRoom?.isNotEmpty() == true
-                        && introduce?.isNotEmpty() == true && textDetail?.isNotEmpty() == true
-                        && uriImg1.toString().isNotEmpty() && uriImg2.toString().isNotEmpty()
+
+                    if (
+                         introduce?.isNotEmpty() == true
+                        && uriImg1.toString().isNotEmpty()
                     ) {
-                        val address =
-                            viewModel.textWard.get() + "," + nameDistricts + "," + nameProvince
-                        val model = AddRoomModel(
-                            "",
-                            address,
-                            nameTypeRoom,
-                            nameRoom,
-                            sRoom,
-                            numberSleepRoom,
-                            textDetail,
-                            introduce,
-                            viewModel.linkImg1,
-                            viewModel.linkImg2,
-                            "Trống",
-                            price ?: "",
-                            viewModel.auth.currentUser!!.uid
-                        )
-                        Thread().run {
-                            viewModel.accAll(model)
-                        }
-
-
-                        viewModel.notifyPut.observe(this, {
-                            if (it == 1) {
-                                Toast.makeText(context, "Thành công!", Toast.LENGTH_LONG).show()
-                            } else {
-                                Toast.makeText(context, "Thất bại !", Toast.LENGTH_LONG).show()
-
-                            }
-                        })
+                        val address = nameProvince
+                        viewModel.addTravel(address)
+//                        pr.show()
+//                        viewModel.notifyPut.observe(this, { itNew->
+//                            pr.dismiss()
+//                            if (itNew == 1) {
+//                                Toast.makeText(context, "Thành công!", Toast.LENGTH_LONG).show()
+//                            } else {
+//                                Toast.makeText(context, "Thất bại !", Toast.LENGTH_LONG).show()
+//
+//                            }
+//                        })
 
                     } else {
                         Toast.makeText(context, "Vui lòng nhập đủ thông tin !", Toast.LENGTH_LONG)
@@ -209,43 +180,8 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
         if (requestCode == 111 && resultCode == RESULT_OK) {
             val imageUri = data?.data
             img_1.setImageURI(imageUri)
-
             uriImg1 = imageUri
         }
-        if (requestCode == 222 && resultCode == RESULT_OK) {
-            val imageUri = data?.data
-            img_2.setImageURI(imageUri)
-            uriImg2 = imageUri
-        }
-    }
-
-    private fun spinnerTypeRoom() {
-        val listType = arrayListOf("Nhà Nghỉ", "Biệt Thự", "Nhà Riêng")
-        val arrayAdapterTypeRoom = ArrayAdapter(
-            activity,
-            android.R.layout.simple_dropdown_item_1line,
-            listType
-        )
-        dataBinding.spinnerTypeRoom.adapter = arrayAdapterTypeRoom
-
-        dataBinding.spinnerTypeRoom.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
-
-                    nameTypeRoom = parent?.getItemAtPosition(position)
-                        .toString()
-
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-
-                }
-            }
     }
 
     override fun bindViewModel() {

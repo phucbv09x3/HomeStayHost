@@ -25,7 +25,7 @@
                 android:layout_marginTop="@dimen/_14sdp"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="Thông tin chỗ nghỉ của bạn "
+                android:text="Thông tin địa điểm du lịch mới "
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/_16sdp"
                 android:textStyle="bold"
@@ -140,171 +140,6 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_districts_on_add" />
 
-            <TextView
-                android:id="@+id/tv_ward"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:text="Phường Xã/ Số Nhà (Chi Tiết)"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_12sdp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/tv_qg"
-                app:layout_constraintTop_toBottomOf="@id/spinner_districts_on_add" />
-
-            <EditText
-                android:id="@+id/edt_ward"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:background="@drawable/custom_bg_tv_vn"
-                android:hint="Phường Xã - Địa chỉ của bạn"
-                android:padding="@dimen/_2sdp"
-                android:text="@={viewModel.textWard}"
-                app:layout_constraintLeft_toLeftOf="@id/tv_ward"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_ward" />
-
-            <TextView
-                android:id="@+id/tv_type_room"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:text="Loại Phòng"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_12sdp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/tv_qg"
-                app:layout_constraintTop_toBottomOf="@id/edt_ward" />
-
-            <Spinner
-                android:id="@+id/spinner_type_room"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_22sdp"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:elevation="@dimen/_8sdp"
-                app:layout_constraintLeft_toLeftOf="@id/tv_qg"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_type_room" />
-
-            <TextView
-                android:id="@+id/tv_room_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:text="Tên chỗ nghỉ"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_12sdp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/tv_qg"
-                app:layout_constraintTop_toBottomOf="@id/spinner_type_room" />
-
-            <EditText
-                android:id="@+id/edt_room_name_dialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:background="@drawable/custom_bg_tv_vn"
-                android:hint="101"
-                android:padding="@dimen/_2sdp"
-                android:text="@={viewModel.nameRoom}"
-                app:layout_constraintLeft_toLeftOf="@id/tv_ward"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_room_name" />
-
-            <TextView
-                android:id="@+id/tv_describe"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:text="Không gian chỗ nghỉ của bạn"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_12sdp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/tv_qg"
-                app:layout_constraintTop_toBottomOf="@id/edt_room_name_dialog" />
-
-            <TextView
-                android:id="@+id/tv_s_room"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:padding="@dimen/_2sdp"
-                android:text="Diện tích chỗ nghỉ (m2)"
-                android:textColor="@color/colorBlack"
-                app:layout_constraintLeft_toLeftOf="@id/tv_ward"
-                app:layout_constraintTop_toBottomOf="@id/tv_describe" />
-
-            <EditText
-                android:id="@+id/edt_s_room_dialog"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:background="@drawable/custom_bg_tv_vn"
-                android:gravity="center"
-                android:hint="35"
-                android:padding="@dimen/_2sdp"
-                android:text="@={viewModel.sRoom}"
-                app:layout_constraintRight_toRightOf="@id/edt_ward"
-                app:layout_constraintTop_toBottomOf="@id/tv_describe" />
-
-            <TextView
-                android:id="@+id/tv_sleep_room"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:padding="@dimen/_2sdp"
-                android:text="Số lượng phòng ngủ"
-                android:textColor="@color/colorBlack"
-                app:layout_constraintLeft_toLeftOf="@id/tv_ward"
-                app:layout_constraintTop_toBottomOf="@id/tv_s_room" />
-
-            <EditText
-                android:id="@+id/edt_sleep_room_dialog"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:background="@drawable/custom_bg_tv_vn"
-                android:gravity="center"
-                android:hint="3"
-                android:padding="@dimen/_2sdp"
-                android:text="@={viewModel.numberSleepRoom}"
-                app:layout_constraintRight_toRightOf="@id/edt_ward"
-                app:layout_constraintTop_toBottomOf="@id/tv_s_room" />
-
-            <TextView
-                android:id="@+id/tv_convenient"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:text="Tiện ngi chỗ ngỉ"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_12sdp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/tv_qg"
-                app:layout_constraintTop_toBottomOf="@id/tv_sleep_room" />
-
-
-            <EditText
-                android:id="@+id/edt_detail_dialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:background="@drawable/custom_bg_tv_vn"
-                android:hint="Wifi + Internet + TV ..."
-                android:padding="@dimen/_2sdp"
-                android:text="@={viewModel.textDetailGT}"
-                app:layout_constraintLeft_toLeftOf="@id/tv_qg"
-                app:layout_constraintRight_toRightOf="@id/edt_ward"
-                app:layout_constraintTop_toBottomOf="@id/tv_convenient" />
 
             <TextView
                 android:id="@+id/tv_title_detail_all"
@@ -317,22 +152,9 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/tv_ward"
-                app:layout_constraintTop_toBottomOf="@id/edt_detail_dialog" />
+                app:layout_constraintLeft_toLeftOf="@id/tv_VietNam"
+                app:layout_constraintTop_toBottomOf="@id/spinner_districts_on_add" />
 
-            <TextView
-                android:id="@+id/tv_detail_all"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:padding="@dimen/_2sdp"
-                android:text="Hãy chia sẻ với khách hàng những thông tin nổi bât của chỗ nghỉ của bạn"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_10sdp"
-                app:layout_constraintLeft_toLeftOf="@id/tv_ward"
-                app:layout_constraintRight_toRightOf="@id/edt_room_name_dialog"
-                app:layout_constraintTop_toBottomOf="@id/tv_title_detail_all" />
 
             <EditText
                 android:id="@+id/edt_detail_all_dialog"
@@ -341,12 +163,12 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:background="@drawable/custom_bg_tv_vn"
-                android:hint="Ví dụ : Là nơi được ai đó ghé qua "
+                android:hint="Mô tả chi tiết địa điểm "
                 android:padding="@dimen/_2sdp"
                 android:text="@={viewModel.introduce}"
                 app:layout_constraintLeft_toLeftOf="@id/tv_qg"
-                app:layout_constraintRight_toRightOf="@id/edt_ward"
-                app:layout_constraintTop_toBottomOf="@id/tv_detail_all" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_detail_all" />
 
             <TextView
                 android:id="@+id/add_image"
@@ -355,11 +177,11 @@
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:padding="@dimen/_2sdp"
-                android:text="Thêm ảnh chỗ ngỉ"
+                android:text="Thêm ảnh điểm du lịch"
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/tv_ward"
+                app:layout_constraintLeft_toLeftOf="@id/tv_VietNam"
                 app:layout_constraintTop_toBottomOf="@id/edt_detail_all_dialog" />
 
             <Button
@@ -385,53 +207,6 @@
                 app:layout_constraintTop_toTopOf="@id/btn_add_img_1" />
 
             <Button
-                android:id="@+id/btn_add_img_2"
-                android:layout_width="@dimen/_18sdp"
-                android:layout_height="@dimen/_18sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@drawable/ic_baseline_add_24"
-                android:onClick="@{(view)->viewModel.onClick(view)}"
-                app:layout_constraintRight_toRightOf="@id/edt_detail_all_dialog"
-                app:layout_constraintTop_toBottomOf="@id/img_1" />
-
-            <ImageView
-                android:id="@+id/img_2"
-                android:layout_width="@dimen/_78sdp"
-                android:layout_height="@dimen/_68sdp"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:scaleType="fitXY"
-                android:src="@drawable/smile"
-                app:layout_constraintLeft_toLeftOf="@id/tv_qg"
-                app:layout_constraintRight_toLeftOf="@id/btn_add_img_1"
-                app:layout_constraintTop_toTopOf="@id/btn_add_img_2" />
-            <TextView
-                android:id="@+id/tv_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:text="Giá Phòng / Ngày (vnd)"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_12sdp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/tv_qg"
-                app:layout_constraintTop_toBottomOf="@id/img_2" />
-
-            <EditText
-                android:id="@+id/edt_price_dialog"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:background="@drawable/custom_bg_tv_vn"
-                android:hint="Ví dụ : 650.000"
-                android:padding="@dimen/_2sdp"
-                android:text="@={viewModel.price}"
-                app:layout_constraintLeft_toLeftOf="@id/tv_ward"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_price" />
-
-            <Button
                 android:id="@+id/btn_access_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -441,12 +216,12 @@
                 android:background="#FFCC00"
                 android:onClick="@{(view)->viewModel.onClick(view)}"
                 android:padding="@dimen/_4sdp"
-                android:text="Thêm Chỗ Ngỉ"
+                android:text="Thêm điểm mới"
                 android:textAllCaps="false"
                 android:textColor="@color/colorWhite"
 
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edt_price_dialog" />
+                app:layout_constraintTop_toBottomOf="@id/img_1" />
             <Button
                 android:id="@+id/btn_access_all"
                 android:layout_width="wrap_content"
