@@ -42,6 +42,7 @@
             android:layout_marginLeft="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_4sdp"
             android:text="Phong 101"
+            android:textStyle="bold"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintLeft_toRightOf="@id/name_acc_title"

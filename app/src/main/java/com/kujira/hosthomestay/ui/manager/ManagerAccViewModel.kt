@@ -47,7 +47,6 @@ class ManagerAccViewModel : BaseViewModel() {
 
     fun blockAcc(uid : String){
         showLoading.onNext(true)
-        dataReferences.child("Report")
         val hashMap = HashMap<String, String>()
         hashMap["idHost"] = auth.currentUser?.uid.toString()
         hashMap["idClient"] = uid
@@ -64,7 +63,6 @@ class ManagerAccViewModel : BaseViewModel() {
     }
     fun blockAccClient(uid : String){
         showLoading.onNext(true)
-        dataReferences.child("Report")
         val hashMap = HashMap<String, String>()
         hashMap["idHost"] = auth.currentUser?.uid.toString()
         hashMap["idClient"] = uid

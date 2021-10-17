@@ -233,6 +233,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/res/drawable/custom_bg_item_manager.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/res/layout/activity_host_main.xml">
           <value>
             <set />
@@ -264,6 +269,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/res/layout/fragment_manager_room_host.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/res/layout/item_manager.xml">
           <value>
             <set />
           </value>

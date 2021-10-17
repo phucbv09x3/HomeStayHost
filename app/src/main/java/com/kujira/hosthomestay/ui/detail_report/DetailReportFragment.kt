@@ -8,6 +8,7 @@ import com.kujira.hosthomestay.ui.base.BaseFragment
 
 class DetailReportFragment : BaseFragment<DetailReportViewModel, FragmentDetailReportBinding>() {
     private var uid = ""
+    private var permission = ""
     override fun createViewModel(): Class<DetailReportViewModel> {
         return DetailReportViewModel::class.java
     }
@@ -23,13 +24,20 @@ class DetailReportFragment : BaseFragment<DetailReportViewModel, FragmentDetailR
             dataBinding.tvShowName.text = it.userName
             uid = it.uid
             viewModel.uidClient = uid
+            permission = it.permission
         }
         dataBinding.rcyReport.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = DetailReportAdapter(mutableListOf())
         }
         dataBinding.resetReport.setOnClickListener {
-            viewModel.resetReportAccClient(uid)
+            if (permission == "1"){
+                viewModel.resetReportAccHost(uid)
+            }
+            if (permission == "2"){
+                viewModel.resetReportAccClient(uid)
+            }
+
         }
         dataBinding.backOnReport.setOnClickListener {
             navigators.navigateUp()
