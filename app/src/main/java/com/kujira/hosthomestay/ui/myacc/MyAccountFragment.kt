@@ -50,15 +50,20 @@ class MyAccountFragment : BaseFragment<MyAccountViewModel, FragmentMyAccountBind
         val nameNew = dialogView.findViewById<EditText>(R.id.edt_new_name).text
         val phoneNew = dialogView.findViewById<EditText>(R.id.edt_new_phone).text
         dialogView.findViewById<Button>(R.id.btn_change_acc).setOnClickListener {
-            viewModel.changeAcc(nameNew.toString(), phoneNew.toString())
-            viewModel.listener.observe(this, {
-                if (it == MyAccountViewModel.SUCCESS) {
-                    alertDialog.dismiss()
-                    Toast.makeText(context, getString(R.string.success), Toast.LENGTH_LONG).show()
-                } else {
-                    Toast.makeText(context, getString(R.string.error), Toast.LENGTH_LONG).show()
-                }
-            })
+            if (nameNew.isNotEmpty() && phoneNew.isNotEmpty()){
+                viewModel.changeAcc(nameNew.toString(), phoneNew.toString())
+                viewModel.listener.observe(this, {
+                    if (it == MyAccountViewModel.SUCCESS) {
+                        alertDialog.dismiss()
+                        Toast.makeText(context, getString(R.string.success), Toast.LENGTH_LONG).show()
+                    } else {
+                        Toast.makeText(context, getString(R.string.error), Toast.LENGTH_LONG).show()
+                    }
+                })
+            }else{
+                Toast.makeText(context,"Vui lòng nhập đầy đủ thông tin !",Toast.LENGTH_LONG).show()
+            }
+
         }
         alertDialog.show()
     }

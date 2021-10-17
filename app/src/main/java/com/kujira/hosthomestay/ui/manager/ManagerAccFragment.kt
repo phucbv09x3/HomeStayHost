@@ -2,6 +2,8 @@ package com.kujira.hosthomestay.ui.manager
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kujira.hosthomestay.R
@@ -37,7 +39,6 @@ class ManagerAccFragment : BaseFragment<ManagerAccViewModel, FragmentManagerAccB
             (rcy_manager.adapter as ManagerRoomAdapter).setList(it)
         })
 
-
     }
 
     override fun clickShowReport(acc: AccUser) {
@@ -64,6 +65,7 @@ class ManagerAccFragment : BaseFragment<ManagerAccViewModel, FragmentManagerAccB
         }
         alertDialog.show()
     }
+
     //    override fun click(addRoomModel: AddRoomModel) {
 //        val alertDialog = android.app.AlertDialog.Builder(context).create()
 //        alertDialog.setTitle("Xóa Phòng")

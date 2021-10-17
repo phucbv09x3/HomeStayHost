@@ -1,6 +1,5 @@
 package com.kujira.hosthomestay.data.model.response
 
-import android.net.Uri
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
@@ -43,7 +42,7 @@ data class DistrictFB(
 )
 
 data class AddRoomModel(
-    var id : String,
+    var id: String,
     var address: String,
     var typeRoom: String,
     var nameRoom: String,
@@ -55,16 +54,16 @@ data class AddRoomModel(
     var imageRoom2: String,
     var status: String,
     var price: String,
-    var uid : String
+    var uid: String
 )
 
 @Parcelize
 data class AccUser(
-    val uid : String,
-    val mail : String,
-    val phone : String,
-    val userName : String,
-    val permission : String,
+    val uid: String,
+    val mail: String,
+    val phone: String,
+    val userName: String,
+    val permission: String,
 ) : Parcelable {
 
 }

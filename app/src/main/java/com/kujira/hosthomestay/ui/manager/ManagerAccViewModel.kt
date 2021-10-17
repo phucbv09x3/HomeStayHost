@@ -7,7 +7,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.kujira.hosthomestay.data.model.response.AccUser
-import com.kujira.hosthomestay.data.model.response.AddRoomModel
 import com.kujira.hosthomestay.ui.base.BaseViewModel
 import com.kujira.hosthomestay.utils.Constants
 
@@ -80,49 +79,6 @@ class ManagerAccViewModel : BaseViewModel() {
         }
 
     }
-
-//    fun removeRoom(addRoomModel: AddRoomModel) {
-//        dataReferences.child(addRoomModel.id).removeValue()
-//    }
-
     var listener = MutableLiveData<Int>()
-    fun editRoom(addRoomModel: AddRoomModel) {
-        dataReferences.orderByChild("id").equalTo(addRoomModel.id).limitToFirst(1)
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val hash = HashMap<String, Any>()
-                    hash["nameRoom"] = addRoomModel.nameRoom
-                    hash["s_room"] = addRoomModel.s_room
-                    hash["numberSleepRoom"] = addRoomModel.numberSleepRoom
-                    hash["convenient"] = addRoomModel.convenient
-                    hash["introduce"] = addRoomModel.introduce
-                    hash["price"] = addRoomModel.price
-                    dataReferences.child(addRoomModel.id).updateChildren(hash)
-                        .addOnSuccessListener {
-                            listener.value = 1
-                        }
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-
-                }
-            })
-    }
-    fun cancelRoom(id: String) {
-        val dataRef = FirebaseDatabase.getInstance().getReference("Host")
-        dataRef.child("ListRoom").child(id).child("idClient").removeValue()
-        val query= dataRef.child("ListRoom")
-        query.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val hash = HashMap<String, Any>()
-                hash["status"] = "Còn Trống"
-                query.child(id).updateChildren(hash)
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-
-            }
-        })
-    }
 }
 

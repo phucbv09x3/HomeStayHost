@@ -43,6 +43,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/data/model/RepoModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/data/model/response/HomeStay.kt">
           <value>
             <set />
@@ -249,6 +254,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/res/layout/activity_host_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/res/layout/activity_login.xml">
           <value>
             <set />
           </value>

@@ -19,6 +19,7 @@ class LoginAccViewModel : BaseViewModel() {
     val listenerClick = MutableLiveData<Int>()
     private var auth = FirebaseAuth.getInstance()
     val listener = MutableLiveData<Int>()
+    val autoLogin = MutableLiveData<Int>()
     private val dataRef =
         FirebaseDatabase.getInstance().getReference(Constants.ADMIN)
 
@@ -30,6 +31,13 @@ class LoginAccViewModel : BaseViewModel() {
         const val PERMISSION_2 = 5
     }
 
+    fun autoLogin(){
+        if (auth.currentUser?.isEmailVerified!!  && auth.currentUser?.uid != null){
+            autoLogin.value = 1
+        }else{
+
+        }
+    }
     fun click(view: View) {
         when (view.id) {
             R.id.btn_login_new -> {
