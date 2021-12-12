@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_4sdp"
         android:layout_marginTop="@dimen/_4sdp"
-        android:background="@drawable/custom_edt_comment">
+        android:elevation="@dimen/_6sdp"
+        android:background="@drawable/custom_bg_item_manager">
 
         <TextView
             android:id="@+id/name_acc_title"
@@ -42,7 +43,7 @@
             android:layout_marginLeft="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_4sdp"
             android:text="Phong 101"
-            android:textStyle="bold"
+            android:textStyle="bold|italic"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintLeft_toRightOf="@id/name_acc_title"
@@ -72,6 +73,7 @@
             android:layout_marginRight="@dimen/_10sdp"
             android:padding="@dimen/_2sdp"
             android:text="Da dat"
+            android:textStyle="italic"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintLeft_toRightOf="@id/title_email_acc"
@@ -111,6 +113,7 @@
             android:layout_marginLeft="@dimen/_4sdp"
             android:padding="@dimen/_2sdp"
             android:text="Phone"
+            android:textStyle="italic"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_14sdp"
             app:layout_constraintLeft_toRightOf="@id/title_phone"

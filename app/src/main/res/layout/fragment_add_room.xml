@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_6sdp"
                 android:layout_marginRight="@dimen/_10sdp"
-                android:text="Vui lòng chia sẻ thông tin vị trí chỗ ngỉ của bạn để dễ tiếp cận khách hàng"
+                android:text="Vui lòng chia sẻ thông tin điểm du lịch mới để cập nhật"
                 android:textColor="@color/colorBlack"
                 app:layout_constraintLeft_toLeftOf="@id/title_address"
                 app:layout_constraintRight_toRightOf="parent"

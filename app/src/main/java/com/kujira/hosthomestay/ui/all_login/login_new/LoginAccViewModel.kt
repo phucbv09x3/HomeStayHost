@@ -71,7 +71,7 @@ class LoginAccViewModel : BaseViewModel() {
 
         if (email.isNotEmpty() && password.isNotEmpty()) {
             val acc = listMailAdmin.contains(email)
-            if (!acc) {
+            if (acc) {
                 showLoading.onNext(true)
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener {

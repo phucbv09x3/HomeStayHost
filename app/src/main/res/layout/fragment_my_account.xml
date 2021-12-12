@@ -33,7 +33,7 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:text="@={viewModel.myMail}"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_14sdp"
             app:layout_constraintTop_toBottomOf="@id/circle_my_acc"
             app:layout_constraintTop_toTopOf="@id/circle_my_acc"
             android:textStyle="bold"
@@ -98,18 +98,18 @@
 
         <Button
             android:id="@+id/tv_logout"
+            android:elevation="@dimen/_4sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_18sdp"
             android:layout_marginTop="@dimen/_16sdp"
-            android:layout_marginRight="@dimen/_18sdp"
             android:layout_marginBottom="@dimen/_8sdp"
-            android:background="#996600"
+            android:background="@drawable/custom_bg_logout"
             android:text="Đăng xuất"
+            app:layout_constraintLeft_toLeftOf="parent"
             android:padding="@dimen/_2sdp"
             android:textAllCaps="false"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/_17sdp"
+            android:textSize="@dimen/_14sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
