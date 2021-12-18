@@ -23,7 +23,6 @@ class MyAccountViewModel : BaseViewModel() {
     }
 
     fun updateUI() {
-
         val dataRef = FirebaseDatabase.getInstance().getReference("Admin")
         dataRef.child("Account").child(auth.currentUser!!.uid)
             .addValueEventListener(object : ValueEventListener {
@@ -42,14 +41,13 @@ class MyAccountViewModel : BaseViewModel() {
             })
     }
 
-    fun changeAcc(name: String, phone: String) {
-        val dataReference = FirebaseDatabase.getInstance().getReference("Host").child("Account")
+    fun changeAcc(phone: String) {
+        val dataReference = FirebaseDatabase.getInstance().getReference("Admin").child("Account")
         dataReference.orderByChild("uid")
             .equalTo(auth.currentUser!!.uid).limitToFirst(1)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val hash = HashMap<String, Any>()
-                    hash["userName"] = name
                     hash["phone"] = phone
                     dataReference.child(auth.currentUser!!.uid).updateChildren(hash)
                         .addOnSuccessListener {

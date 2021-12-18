@@ -22,7 +22,7 @@ class ManagerAccFragment : BaseFragment<ManagerAccViewModel, FragmentManagerAccB
     override fun getResourceLayout(): Int = R.layout.fragment_manager_acc
 
     override fun initView() {
-        activity.btn_managerRoom_on_main.setTextColor(context.getColor(R.color.rdc))
+        activity.btn_managerRoom_on_main.setTextColor(context.getColor(R.color.color_show_choose))
         activity.btn_add_room_on_main.setTextColor(context.getColor(R.color.colorBlack))
         activity.btn_my_account_on_main.setTextColor(context.getColor(R.color.colorBlack))
         activity.linear_on_main.visibility = View.VISIBLE

@@ -24,7 +24,7 @@ class MyAccountFragment : BaseFragment<MyAccountViewModel, FragmentMyAccountBind
     override fun initView() {
         activity.btn_managerRoom_on_main.setTextColor(context.getColor(R.color.colorBlack))
         activity.btn_add_room_on_main.setTextColor(context.getColor(R.color.colorBlack))
-        activity.btn_my_account_on_main.setTextColor(context.getColor(R.color.rdc))
+        activity.btn_my_account_on_main.setTextColor(context.getColor(R.color.color_show_choose))
         viewModel.updateUI()
     }
 
@@ -49,11 +49,10 @@ class MyAccountFragment : BaseFragment<MyAccountViewModel, FragmentMyAccountBind
         alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         alertDialog.setView(dialogView)
 
-        val nameNew = dialogView.findViewById<EditText>(R.id.edt_new_name).text
         val phoneNew = dialogView.findViewById<EditText>(R.id.edt_new_phone).text
         dialogView.findViewById<Button>(R.id.btn_change_acc).setOnClickListener {
-            if (nameNew.isNotEmpty() && phoneNew.isNotEmpty()){
-                viewModel.changeAcc(nameNew.toString(), phoneNew.toString())
+            if (phoneNew.isNotEmpty()){
+                viewModel.changeAcc(phoneNew.toString())
                 viewModel.listener.observe(this, {
                     if (it == MyAccountViewModel.SUCCESS) {
                         alertDialog.dismiss()

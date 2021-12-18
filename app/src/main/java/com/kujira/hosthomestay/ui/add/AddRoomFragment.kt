@@ -35,7 +35,7 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
     @RequiresApi(Build.VERSION_CODES.O)
     override fun initView() {
         activity.btn_managerRoom_on_main.setTextColor(context.getColor(R.color.colorBlack))
-        activity.btn_add_room_on_main.setTextColor(context.getColor(R.color.rdc))
+        activity.btn_add_room_on_main.setTextColor(context.getColor(R.color.color_show_choose))
         activity.btn_my_account_on_main.setTextColor(context.getColor(R.color.colorBlack))
 
         val arrayAdapterProvinces = ArrayAdapter(

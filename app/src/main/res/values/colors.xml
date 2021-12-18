@@ -7,4 +7,5 @@
     <color name="colorBlack">#000000</color>
     <color name="rdc">#FF6600</color>
     <color name="bg_login_new">#272A32</color>
+    <color name="color_show_choose">#3CBC51</color>
 </resources>

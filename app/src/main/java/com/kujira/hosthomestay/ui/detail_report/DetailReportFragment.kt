@@ -1,5 +1,6 @@
 package com.kujira.hosthomestay.ui.detail_report
 
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.data.model.response.AccUser
@@ -25,6 +26,7 @@ class DetailReportFragment : BaseFragment<DetailReportViewModel, FragmentDetailR
             uid = it.uid
             viewModel.uidClient = uid
             permission = it.permission
+            viewModel.getListReport(it.uid)
         }
         dataBinding.rcyReport.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
@@ -45,7 +47,6 @@ class DetailReportFragment : BaseFragment<DetailReportViewModel, FragmentDetailR
     }
 
     override fun bindViewModel() {
-        viewModel.getListReport()
         viewModel.listAccLiveData.observe(this,{
             (dataBinding.rcyReport.adapter as DetailReportAdapter).setList(it)
         })

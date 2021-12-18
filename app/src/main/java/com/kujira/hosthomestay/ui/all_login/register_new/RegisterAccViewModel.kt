@@ -12,6 +12,8 @@ import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.ui.base.BaseViewModel
 import com.kujira.hosthomestay.utils.Constants
 import com.kujira.hosthomestay.utils.printLog
+import java.nio.charset.StandardCharsets
+import java.security.MessageDigest
 
 class RegisterAccViewModel : BaseViewModel() {
     val emailRegister = ObservableField<String>()
@@ -23,6 +25,7 @@ class RegisterAccViewModel : BaseViewModel() {
     private var listEmailAdmin = mutableListOf<String>()
     val listenerShowToast = MutableLiveData<Int>()
     private var adminIntroductory = ""
+    var emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
     fun click(view: View) {
         when (view.id) {
@@ -63,7 +66,14 @@ class RegisterAccViewModel : BaseViewModel() {
             if (isCheckMail) {
                  listenerShowToast.value = R.string.email_exist
             } else {
-                fireBaseAuth.createUserWithEmailAndPassword(mail, passWord)
+                if(passWord.length < 6) {
+                    listenerShowToast.value = R.string.length_pass
+                }else if(!mail.matches(Regex(emailPattern))){
+                    listenerShowToast.value = R.string.email_pattern
+                } else{
+
+                }
+                fireBaseAuth.createUserWithEmailAndPassword(mail, hashFunc(passWord))
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             showLoading.onNext(false)
@@ -89,7 +99,15 @@ class RegisterAccViewModel : BaseViewModel() {
              listenerShowToast.value = R.string.error_isEmpty
         }
     }
-
+    private fun hashFunc(textEncrypt: String): String {
+        val md5 = MessageDigest.getInstance("MD5")//SHA-256
+        var sbb = ""
+        val byteArray: ByteArray = md5.digest(textEncrypt.toByteArray(StandardCharsets.UTF_8))
+        for (item in byteArray) {
+            sbb += String.format("%02x", item)
+        }
+        return sbb
+    }
 
     fun getListAcc(): MutableList<String> {
         val dataRef =

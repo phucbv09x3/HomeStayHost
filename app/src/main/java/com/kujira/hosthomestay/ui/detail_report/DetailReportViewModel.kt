@@ -9,27 +9,27 @@ import com.kujira.hosthomestay.utils.Constants
 import com.kujira.hosthomestay.utils.printLog
 
 class DetailReportViewModel : BaseViewModel() {
-    private val dataRef = FirebaseDatabase.getInstance().getReference(Constants.CLIENT)
+    private val dataRef = FirebaseDatabase.getInstance().getReference("Client")
     private var listAcc = mutableListOf<ReportModel>()
     var listAccLiveData = MutableLiveData<MutableList<ReportModel>>()
     var uidClient =""
-    fun getListReport() {
-        dataRef.child("Report").child(uidClient)
+    fun getListReport(uid : String) {
+        showLoading.onNext(true)
+        dataRef.child("Report").child("ReportClient").child(uid)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     listAcc.clear()
                     for (snap in snapshot.children) {
-                        val idHost = snap.child("idHost")
-                            .value.toString()
-                        val content = snap.child("contentReport")
-                            .value.toString()
+                        val idHost = snap.child("idHost").value.toString()
+                        val content = snap.child("contentReport").value.toString()
                         listAcc.add(ReportModel(idHost, content))
                     }
                     listAccLiveData.value = listAcc
+                    showLoading.onNext(false)
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-
+                    showLoading.onNext(false)
                 }
             })
     }

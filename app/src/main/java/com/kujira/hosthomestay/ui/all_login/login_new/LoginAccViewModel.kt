@@ -11,7 +11,9 @@ import com.google.firebase.database.ValueEventListener
 import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.ui.base.BaseViewModel
 import com.kujira.hosthomestay.utils.Constants
-import com.kujira.hosthomestay.utils.printLog
+import java.nio.charset.StandardCharsets
+import java.security.MessageDigest
+import java.util.*
 
 class LoginAccViewModel : BaseViewModel() {
     val emailLogin = ObservableField<String>()
@@ -49,19 +51,17 @@ class LoginAccViewModel : BaseViewModel() {
     fun getListAcc() {
         dataRef.child(Constants.ACCOUNT)
             .addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                listMailAdmin.clear()
-                for (snap in snapshot.children) {
-                    val mail = snap.child(Constants.MAIL).value.toString()
-                    listMailAdmin.add(mail)
-                    printLog("haibanam:${mail}")
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    listMailAdmin.clear()
+                    for (snap in snapshot.children) {
+                        val mail = snap.child(Constants.MAIL).value.toString()
+                        listMailAdmin.add(mail)
+                    }
                 }
-                printLog("haibanam:${listMailAdmin}")
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-            }
-        })
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
 
     }
 
@@ -70,10 +70,16 @@ class LoginAccViewModel : BaseViewModel() {
         val password = passwordLogin.get()?.trim() ?: ""
 
         if (email.isNotEmpty() && password.isNotEmpty()) {
-            val acc = listMailAdmin.contains(email)
-            if (acc) {
+            if (listMailAdmin.isEmpty()) {
+                listener.value = R.string.repair
+            }
+
+            val acc = listMailAdmin.firstOrNull {
+                it.lowercase(Locale.getDefault()) == email.lowercase(Locale.getDefault())
+            }
+            if (acc != null) {
                 showLoading.onNext(true)
-                auth.signInWithEmailAndPassword(email, password)
+                auth.signInWithEmailAndPassword(email, hashFunc(password))
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
                             val user = auth.currentUser
@@ -97,9 +103,18 @@ class LoginAccViewModel : BaseViewModel() {
             }
 
         } else {
-             listener.value = R.string.error_isEmpty
+            listener.value = R.string.error_isEmpty
         }
     }
 
+    private fun hashFunc(textEncrypt: String): String {
+        val md5 = MessageDigest.getInstance("MD5")//SHA-256
+        var sbb = ""
+        val byteArray: ByteArray = md5.digest(textEncrypt.toByteArray(StandardCharsets.UTF_8))
+        for (item in byteArray) {
+            sbb += String.format("%02x", item)
+        }
+        return sbb
+    }
 
 }

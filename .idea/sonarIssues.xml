@@ -153,6 +153,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/comment/CommentViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/client/home/HomeAdapter.kt">
           <value>
             <set />
@@ -694,6 +699,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/custom_change_acc.xml">
           <value>
             <set />
           </value>
