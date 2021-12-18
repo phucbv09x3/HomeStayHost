@@ -125,12 +125,10 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
                 }
                 AddRoomViewModel.BTN_IMG_ACCESS -> {
                     viewModel.putTravel(uriImg1!!)
-                    pr.show()
                     viewModel.listenerSuccess.observe(this, { it2 ->
                         if (it2 == 1) {
                             dataBinding.btnAccessAll.visibility = View.VISIBLE
                         }
-                        pr.dismiss()
                     })
 
                 }
@@ -146,8 +144,6 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
                         viewModel.notifyPut.observe(this, { itNew->
                             if (itNew == 1) {
                                 Toast.makeText(context, "Thành công!", Toast.LENGTH_LONG).show()
-                            } else {
-                                Toast.makeText(context, "Thất bại !", Toast.LENGTH_LONG).show()
                             }
                         })
 
