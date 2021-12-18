@@ -31,7 +31,7 @@ class AddRoomViewModel : BaseViewModel() {
     var listenerBtnAddHome = MutableLiveData<Int>()
 
     var listenerSuccess = MutableLiveData<Int>()
-    var notifyPut = MutableLiveData<Int>()
+    var notifyPut = MutableLiveData(0)
     var linkImg1 = ""
 
     companion object {
@@ -130,8 +130,10 @@ class AddRoomViewModel : BaseViewModel() {
         dataRefer.child("TravelList").child(System.currentTimeMillis().toString()).setValue(hashMap)
             .addOnSuccessListener {
                 showLoading.onNext(false)
+                notifyPut.value = 1
             }.addOnFailureListener {
                 showLoading.onNext(false)
+                notifyPut.value = 2
             }
     }
 }

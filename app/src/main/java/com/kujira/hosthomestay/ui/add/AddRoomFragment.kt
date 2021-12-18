@@ -141,18 +141,15 @@ class AddRoomFragment : BaseFragment<AddRoomViewModel, FragmentAddRoomBinding>()
                          introduce?.isNotEmpty() == true
                         && uriImg1.toString().isNotEmpty()
                     ) {
-                        val address = nameProvince
+                        val address = "$nameDistricts,$nameProvince"
                         viewModel.addTravel(address)
-//                        pr.show()
-//                        viewModel.notifyPut.observe(this, { itNew->
-//                            pr.dismiss()
-//                            if (itNew == 1) {
-//                                Toast.makeText(context, "Thành công!", Toast.LENGTH_LONG).show()
-//                            } else {
-//                                Toast.makeText(context, "Thất bại !", Toast.LENGTH_LONG).show()
-//
-//                            }
-//                        })
+                        viewModel.notifyPut.observe(this, { itNew->
+                            if (itNew == 1) {
+                                Toast.makeText(context, "Thành công!", Toast.LENGTH_LONG).show()
+                            } else {
+                                Toast.makeText(context, "Thất bại !", Toast.LENGTH_LONG).show()
+                            }
+                        })
 
                     } else {
                         Toast.makeText(context, "Vui lòng nhập đủ thông tin !", Toast.LENGTH_LONG)
