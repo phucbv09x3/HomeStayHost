@@ -124,7 +124,7 @@ class AddRoomViewModel : BaseViewModel() {
         val hashMap = HashMap<String, String>()
         hashMap["address"] = address
         hashMap["detail"] = introduce.get().toString()
-        hashMap["id"] = "key"
+        hashMap["id"] = System.currentTimeMillis().toString()
         hashMap["img"] = linkImg1
 
         dataRefer.child("TravelList").child(System.currentTimeMillis().toString()).setValue(hashMap)
