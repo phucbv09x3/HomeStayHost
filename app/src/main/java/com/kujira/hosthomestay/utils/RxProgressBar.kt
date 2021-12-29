@@ -9,7 +9,7 @@ import io.reactivex.subjects.BehaviorSubject
 import java.util.concurrent.Callable
 
 /**
- * Created by OpenYourEyes on 3/3/2020
+ * Created by PhucBv on 5/2021
  */
 class RxProgressBar(schedulerProvider: ISchedulerProvider) : Observable<Boolean>() {
 

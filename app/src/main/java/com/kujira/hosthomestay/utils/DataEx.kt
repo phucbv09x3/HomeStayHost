@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.onStart
 import com.kujira.hosthomestay.data.model.response.ErrorResponse
 
 /**
- * Created by OpenYourEyes on 4/4/21
+ * Created by PhucBv on 4/4/21
  */
 class ListLiveData<T> : MutableLiveData<MutableList<T>>()
 

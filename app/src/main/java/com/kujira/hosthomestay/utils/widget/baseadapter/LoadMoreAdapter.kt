@@ -14,7 +14,7 @@ import com.kujira.hosthomestay.data.model.RepoModel
 import com.kujira.hosthomestay.utils.printLog
 
 /**
- * Created by OpenYourEyes on 11/19/20
+ * Created by PhucBv on 5/2021
  */
 
 class LoadMoreAdapter<M>(

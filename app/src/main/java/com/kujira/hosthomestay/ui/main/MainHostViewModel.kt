@@ -6,7 +6,7 @@ import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.ui.base.BaseViewModel
 
 /**
- * Created by OpenYourEyes on 10/24/2020
+ * Created by PhucBv on 5/2021
  */
 class MainHostViewModel : BaseViewModel() {
     companion object {

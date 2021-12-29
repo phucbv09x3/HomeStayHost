@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 /**
- * Created by OpenYourEyes on 4/4/21
+ * Created by PhucBv on 4/4/21
  */
 @Singleton
 class ApiService : IApiService {

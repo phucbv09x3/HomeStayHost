@@ -9,7 +9,7 @@ import com.kujira.hosthomestay.R
 import com.kujira.hosthomestay.utils.printLog
 
 /**
- * Created by OpenYourEyes on 4/6/21
+ * Created by PhucBv on 4/6/21
  */
 class LoadingAdapter : RecyclerView.Adapter<LoadingAdapter.DataViewHolder>() {
 

@@ -16,7 +16,7 @@ import com.kujira.hosthomestay.utils.printLog
 import javax.inject.Inject
 
 /**
- * Created by OpenYourEyes on 9/18/2020
+ * Created by PhucBv on 5/2021
  */
 abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> :
     DaggerAppCompatActivity(), Navigators {

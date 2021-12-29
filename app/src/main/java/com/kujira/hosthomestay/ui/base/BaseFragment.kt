@@ -25,7 +25,7 @@ import javax.inject.Inject
 
 
 /**
- * Created by OpenYourEyes on 11/26/2019
+ * Created by PhucBv on 5/2021
  */
 abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
     DaggerFragment(), IFragmentCallback {

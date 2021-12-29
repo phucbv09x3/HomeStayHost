@@ -18,7 +18,7 @@ fun ConcatAdapter.checkLoading(pagingDelegate: PagingDelegate) {
 }
 
 /**
- * Created by OpenYourEyes on 11/20/20
+ * Created by PhucBv on 5/2021
  */
 class LoadMoreRecyclerView @JvmOverloads constructor(
     context: Context,

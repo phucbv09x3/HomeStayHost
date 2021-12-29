@@ -11,7 +11,7 @@ import com.kujira.hosthomestay.utils.Constants
 import java.util.concurrent.TimeUnit
 
 /**
- * Created by OpenYourEyes on 10/24/2020
+ * Created by PhucBv on 5/2021
  */
 class App : DaggerApplication() {
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {

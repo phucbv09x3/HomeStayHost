@@ -4,7 +4,7 @@ import android.util.Log
 import com.kujira.hosthomestay.BuildConfig
 
 /**
- * Created by OpenYourEyes on 10/22/2020
+ * Created by PhucBv on 5/2021
  */
 
 fun printLog(message: Any?, prefix: String = "") {

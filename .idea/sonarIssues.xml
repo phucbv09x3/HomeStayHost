@@ -123,6 +123,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/base/BaseActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../HomeStay/app/src/main/java/com/kujira/homestay/ui/base/BaseViewModel.kt">
           <value>
             <set />
@@ -649,6 +654,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/utils/widget/baseadapter/BaseAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/kujira/hosthomestay/utils/widget/baseadapter/CustomAdapter.kt">
           <value>
             <set />
           </value>

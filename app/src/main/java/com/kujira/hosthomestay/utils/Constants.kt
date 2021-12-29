@@ -6,7 +6,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 
 /**
- * Created by OpenYourEyes on 10/24/2020
+ * Created by PhucBv on 5/2021
  */
 object Constants {
     const val EMPTY = ""

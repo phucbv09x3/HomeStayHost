@@ -6,7 +6,7 @@ import com.kujira.hosthomestay.data.model.response.BaseResponse
 import com.kujira.hosthomestay.data.model.response.ErrorResponse
 
 /**
- * Created by OpenYourEyes on 10/24/2020
+ * Created by PhucBv on 5/2021
  */
 fun <T : BaseResponse<*>> Observable<T>.mapToResult(): Observable<Result<T>> {
     return this.map {

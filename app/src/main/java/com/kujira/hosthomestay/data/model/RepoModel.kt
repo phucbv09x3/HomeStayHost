@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 /**
- * Created by OpenYourEyes on 11/2/20
+ * Created by PhucBv on 5/2021
  */
 @Parcelize
 data class RepoModel(

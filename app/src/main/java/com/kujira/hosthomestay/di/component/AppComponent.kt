@@ -11,7 +11,7 @@ import com.kujira.hosthomestay.di.module.AppModule
 import javax.inject.Singleton
 
 /**
- * Created by Phucbv on 5/2021
+ * Created by PhucBv on 5/2021
  */
 @Singleton
 @Component(modules = [AndroidSupportInjectionModule::class, ActivityBuilder::class, AppModule::class])

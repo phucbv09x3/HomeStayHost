@@ -5,7 +5,7 @@ import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 
 /**
- * Created by OpenYourEyes on 11/2/20
+ * Created by PhucBv on 5/2021
  */
 fun View.click(): Observable<Unit> {
     return Observable.create {
